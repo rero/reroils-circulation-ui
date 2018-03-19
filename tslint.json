@@ -120,13 +120,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "reroils",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "reroils",
       "kebab-case"
     ],
     "no-output-on-prefix": true,

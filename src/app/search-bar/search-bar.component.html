@@ -1,0 +1,16 @@
+
+<div class="input-group" id="adv-search">
+    <input #searchinput 
+        type="text"
+        class="form-control"
+        placeholder="{{ placeholder }}"
+        [value]="searchText"
+        (keyup.enter)="search(searchinput.value)"
+    />
+    <div class="input-group-btn">
+        <div class="btn-group" role="group">
+            <button type="button" (click)="search(searchinput.value)" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        </div>
+    </div>
+</div>
+

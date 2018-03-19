@@ -1,0 +1,29 @@
+<div *ngIf="items.length">
+  <table class="table table-bordered">
+    <tr>
+      <th>Title</th>
+      <th>Item</th>
+      <th>Location</th>
+      <th>Return date</th>
+      <th>Actions</th>
+      <th>Remove</th>
+    </tr>
+    <tr *ngFor="let item of items" class="success">
+      <td>{{ item.title }}</td>
+      <td>{{ item.barcode }}</td>
+      <td>{{ item.location }}</td>
+      <td>{{ item.endDate | nicedate }}</td>
+      <td>
+        <select class="form-control">
+          <option>Checkout</option>
+        </select>
+      </td>
+      <td>
+        <button type="button" class="btn btn-xs btn-danger pull-right" (click)="removeItem(item)">
+          <i class="fa fa-close fa-xs" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </table>
+  <button type="button" class="btn btn-success pull-right" (click)="validateItems(items)">Validate</button>
+</div>
