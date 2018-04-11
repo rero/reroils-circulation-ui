@@ -1,9 +1,9 @@
 
 <div class="input-group" id="adv-search">
-    <input #searchinput 
+    <input #searchinput
         type="text"
         class="form-control"
-        placeholder="{{ placeholder }}"
+        placeholder="{{ placeholder | translate }}"
         [value]="searchText"
         (keyup.enter)="search(searchinput.value)"
     />

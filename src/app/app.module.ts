@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemCirculationService } from './in-memory-circulation.service';
 
@@ -17,24 +17,34 @@ import { PatronsService } from './patrons.service';
 import { DocumentsService } from './documents.service';
 import { NicedatePipe } from './nicedate.pipe';
 
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { WebpackTranslateLoader } from './webpack-translate-loader';
+
+
 @NgModule({
   declarations: [
-  AppComponent,
-  SearchBarComponent,
-  PatronDetailsComponent,
-  ItemsListComponent,
-  UserMessageComponent,
-  NicedatePipe,
+    AppComponent,
+    SearchBarComponent,
+    PatronDetailsComponent,
+    ItemsListComponent,
+    UserMessageComponent,
+    NicedatePipe,
   ],
   imports: [
-  BrowserModule,
-  HttpClientModule,
-  environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(InMemCirculationService, { delay: 500, dataEncapsulation: false }),
+    BrowserModule,
+    HttpClientModule,
+    environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(InMemCirculationService, { delay: 500, dataEncapsulation: false }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useClass: WebpackTranslateLoader
+      }
+    })
   ],
   providers: [
-  URLPrefixService,
-  PatronsService,
-  DocumentsService
+    URLPrefixService,
+    PatronsService,
+    DocumentsService
   ],
   bootstrap: [AppComponent]
 })

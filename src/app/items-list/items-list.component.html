@@ -1,12 +1,12 @@
 <div *ngIf="items.length">
   <table class="table table-bordered">
     <tr>
-      <th>Title</th>
-      <th>Item</th>
-      <th>Location</th>
-      <th>Return date</th>
-      <th>Actions</th>
-      <th>Remove</th>
+      <th>{{ 'Title' | translate }}</th>
+      <th>{{ 'Item' | translate }}</th>
+      <th>{{ 'Location' | translate }}</th>
+      <th>{{ 'Return date' | translate }}</th>
+      <th>{{ 'Actions' | translate }}</th>
+      <th>{{ 'Remove' | translate }}</th>
     </tr>
     <tr *ngFor="let item of items" class="success">
       <td>{{ item.title }}</td>
@@ -25,5 +25,5 @@
       </td>
     </tr>
   </table>
-  <button type="button" class="btn btn-success pull-right" (click)="validateItems(items)">Validate</button>
+  <button type="button" class="btn btn-success pull-right" (click)="validateItems(items)">{{ 'Validate' | translate }}</button>
 </div>

@@ -1,0 +1,23 @@
+{
+  "more than one item found": "più di un esemplare trovato",
+  "Please enter a patron card number.": "Digitare un numero di carta di lettore.",
+  "Title": "Titolo",
+  "Actions": "Azioni",
+  "item cannot be loaned: it is alreay loaned": "l'esemplare non può essere prestato: è già in prestito",
+  "patron not found": "lettore non trovato",
+  "Warning:": "Avviso:",
+  "Remove": "Rimuovere",
+  "more than one patron found": " più di un lettore trovato",
+  "item cannot be loaned: the status is missing": "Prestito / Ritorno",
+  "Checkin / Checkout": "Prestito / Ritorno",
+  "item cannot be loaned: due to the item type": "l'esemplare non può essere prestato: legato al typo di esemplare",
+  "Validate": "Convalidare",
+  "Item": "Esemplare",
+  "Return date": "Data di ritorno",
+  "item is alreay on the list": "l'esemplare è già presente nella lista",
+  "birthdate": "data di nascita",
+  "an error occurs on the server": "si è verificato un errore sul server.",
+  "Location": "Localizzazione",
+  "Please enter an item barcode.": "Digitare il codice a barre dell'esemplare",
+  "item not found": "esemplare non trovato"
+}

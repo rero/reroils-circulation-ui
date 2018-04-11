@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, LOCALE_ID } from '@angular/core';
 import { Patron } from './patron';
 import { PatronsService } from './patrons.service';
 import { DocumentsService } from './documents.service';
@@ -7,6 +7,11 @@ import * as moment from 'moment';
 import { Moment } from 'moment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
+import {TranslateService} from '@ngx-translate/core';
+
+export function _(str: string) {
+  return str;
+}
 
 @Component({
   selector: 'reroils-circulation-root',
@@ -21,13 +26,18 @@ export class AppComponent {
   public items: Item[];
 
   constructor(private patronsService: PatronsService,
-    private documentsService: DocumentsService) {
-    this.placeholder = 'Please enter a patron card number.';
+              private documentsService: DocumentsService,
+              @Inject(LOCALE_ID) locale,
+              translate: TranslateService) {
+    this.placeholder = _('Please enter a patron card number.');
     this.searchText = '';
     this.patronsService = patronsService;
     this.documentsService = documentsService;
     this.message = '';
     this.items = new Array<Item>();
+    moment.locale(locale);
+    translate.setDefaultLang('en');
+    translate.use(locale);
   }
 
   searchValueUpdated(search_text: string) {
@@ -48,19 +58,19 @@ export class AppComponent {
             const status = item['_circulation'].status;
             const itemType = item.itemType;
             if (status === ItemStatus.missing) {
-              this.message = 'item cannot be loaned: the status is missing';
+              this.message = _('item cannot be loaned: the status is missing');
               break;
             }
             if (status === ItemStatus.on_loan) {
-              this.message = 'item cannot be loaned: it is alreay loaned';
+              this.message = _('item cannot be loaned: it is alreay loaned');
               break;
             }
             if (itemType === ItemType.no_loan) {
-              this.message = 'item cannot be loaned: due to the item type';
+              this.message = _('item cannot be loaned: due to the item type');
               break;
             }
             if (this.items.find(x => x.barcode === item.barcode)) {
-              this.message = 'item is alreay on the list';
+              this.message = _('item is alreay on the list');
               break;
             }
             if (item['_circulation'].status === ItemStatus.on_shelf) {
@@ -74,16 +84,16 @@ export class AppComponent {
               this.searchText = '';
               this.message = '';
             } else {
-              this.message = `bad item status ${ item['_circulation'].status }!`;
+              this.message = _(`bad item status ${ item['_circulation'].status }!`);
             }
             break;
           }
           case 0: {
-            this.message = 'item not found';
+            this.message = _('item not found');
             break;
           }
           default: {
-            this.message = 'more than one item found';
+            this.message = _('more than one item found');
             break;
           }
         }
@@ -97,17 +107,17 @@ export class AppComponent {
         switch (patrons.length) {
           case 1: {
             this.patron = patrons[0];
-            this.placeholder = 'Please enter an item barcode.';
+            this.placeholder = _('Please enter an item barcode.');
             this.searchText = '';
             this.message = '';
             break;
           }
           case 0: {
-            this.message = 'patron not found';
+            this.message = _('patron not found');
             break;
           }
           default: {
-            this.message = 'more than one patron found';
+            this.message = _('more than one patron found');
             break;
           }
         }
@@ -117,7 +127,7 @@ export class AppComponent {
 
   clearPatron(patron: Patron) {
     this.patron = null;
-    this.placeholder = 'Please enter a patron card number.';
+    this.placeholder = _('Please enter a patron card number.');
     this.searchText = '';
     this.items = new Array<Item>();
   }
@@ -145,7 +155,7 @@ export class AppComponent {
         this.message = `${items.length} items sucesfully loaned`;
         this.clearPatron(this.patron)
       } else {
-        this.message = 'an error occurs on the server';
+        this.message = _('an error occurs on the server');
       }
     });
   }
