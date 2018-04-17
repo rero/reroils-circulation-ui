@@ -22,8 +22,9 @@
   <div class="col-md-12">
     <reroils-circulation-items-list
       [items]="items"
+      [patron]="patron"
       (onRemoveItem)="removeItem($event)"
-      (onValidateItems)="validateItems($event)"
+      (onApplyItems)="applyItems($event)"
     ></reroils-circulation-items-list>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from '../item';
-
+import { Patron } from '../patron';
 
 @Component({
   selector: 'reroils-circulation-items-list',
@@ -9,20 +9,21 @@ import { Item } from '../item';
 })
 export class ItemsListComponent {
   @Input() items: Item[];
+  @Input() patron: Patron;
   @Output() onRemoveItem = new EventEmitter<Item>();
-  @Output() onValidateItems = new EventEmitter<Item[]>();
+  @Output() onApplyItems = new EventEmitter<Item[]>();
 
   constructor() { }
 
-  removeItem(item: Item) {
+  remove(item: Item) {
     if (item) {
       this.onRemoveItem.emit(item);
     }
   }
 
-  validateItems(items: Item[]) {
+  apply(items: Item[]) {
      if (items.length) {
-      this.onValidateItems.emit(items);
+      this.onApplyItems.emit(items);
     }
   }
 }

@@ -1,29 +1,40 @@
+
+
 <div *ngIf="items.length">
   <table class="table table-bordered">
     <tr>
       <th>{{ 'Title' | translate }}</th>
       <th>{{ 'Item' | translate }}</th>
       <th>{{ 'Location' | translate }}</th>
+      <th>{{ 'Status' | translate }}</th>
+      <th>{{ 'Requests' | translate }}</th>
       <th>{{ 'Return date' | translate }}</th>
       <th>{{ 'Actions' | translate }}</th>
-      <th>{{ 'Remove' | translate }}</th>
     </tr>
-    <tr *ngFor="let item of items" class="success">
-      <td>{{ item.title }}</td>
-      <td>{{ item.barcode }}</td>
-      <td>{{ item.location }}</td>
+    <tr *ngFor="let item of items"
+        [ngClass]="{
+                      'success': item.onShelf,
+                      'danger': item.isMissing,
+                      'info': item.onLoan
+                  }"
+    >
+      <td>{{ item.item.title }}</td>
+      <td>{{ item.item.barcode }}</td>
+      <td>{{ item.item.location }}</td>
+      <td>{{ item.item._circulation.status }}</td>
+      <td><span *ngIf="item.requestedPosition(patron)">{{ item.requestedPosition(patron) }} / </span>{{ item.requests.length }}</td>
       <td>{{ item.endDate | nicedate }}</td>
       <td>
-        <select class="form-control">
-          <option>Checkout</option>
-        </select>
-      </td>
-      <td>
-        <button type="button" class="btn btn-xs btn-danger pull-right" (click)="removeItem(item)">
-          <i class="fa fa-close fa-xs" aria-hidden="true"></i>
-        </button>
-      </td>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" [ngClass]="{'disabled': (item.getActions(patron).length < 2)}" data-toggle="dropdown" aria-haspopup="true"       aria-expanded="false">
+            {{ item.getAction(patron) }} <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li (click)="item.setAction(action)" *ngFor="let action of item.getActions(patron)"><a>{{ action }}</a></li>
+          </ul>
+        </div>
+    </td>
     </tr>
   </table>
-  <button type="button" class="btn btn-success pull-right" (click)="validateItems(items)">{{ 'Validate' | translate }}</button>
+  <button type="button" class="btn btn-success pull-right" (click)="apply(items)">{{ 'Apply' | translate }}</button>
 </div>

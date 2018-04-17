@@ -19,7 +19,7 @@ import { NicedatePipe } from './nicedate.pipe';
 
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { WebpackTranslateLoader } from './webpack-translate-loader';
-
+import {ItemUI} from './item';
 
 @NgModule({
   declarations: [
@@ -29,11 +29,12 @@ import { WebpackTranslateLoader } from './webpack-translate-loader';
     ItemsListComponent,
     UserMessageComponent,
     NicedatePipe,
+    // ItemUI
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(InMemCirculationService, { delay: 500, dataEncapsulation: false }),
+    environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(InMemCirculationService, { delay: 500, dataEncapsulation: false, put204: false }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

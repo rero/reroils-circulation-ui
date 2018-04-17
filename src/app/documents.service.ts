@@ -2,55 +2,67 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { URLPrefixService } from './urlprefix.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Item, Circulation } from './item';
+import { Item, Circulation, ItemUI } from './item';
 import { Patron } from './patron';
 import 'rxjs/add/operator/map';
-
+import * as moment from 'moment';
 
 @Injectable()
 export class DocumentsService {
     documentsUrl: string;  // URL to web api
     loanUrl: string;
+    patronItemsUrl: string;
+
     constructor(private http: HttpClient, private urlPrefix: URLPrefixService) {
         this.documentsUrl = urlPrefix.documentsURL;
         this.loanUrl = urlPrefix.loanURL;
+        this.patronItemsUrl = urlPrefix.patronItemsURL;
     }
 
-    getItem(barcode: string): Observable<Item[]> {
+    createItem(data) {
+      let item = new ItemUI(data, this)
+      return item;
+    }
+
+    getPatronItems(patron: Patron) {
+      return this.http
+          .get<Item[]>(this.patronItemsUrl + patron.barcode)
+          .map(res => {
+            return res.map(item => {return this.createItem(item)});
+          });
+    }
+
+    getItem(barcode: string): Observable<ItemUI[]> {
         return this.http
-        .get(this.documentsUrl + barcode)
+        .get<Item[]>(this.documentsUrl + barcode)
         .map(res => {
             if (res['hits']) {
                 let documents = res['hits']['hits'];
-                let items = new Array<Item>();
+                let items = new Array<ItemUI>();
                 for (let doc of documents) {
-                  let title = doc.metadata.title;
                   let item = doc.metadata.itemslist.filter(obj => String(obj.barcode) === barcode).pop();
-                  let circulation = <Circulation>item['_circulation'];
-                  let itemObj = new Item();
-                  itemObj.pid = item.pid;
-                  itemObj.title = title;
-                  itemObj.barcode = item.barcode;
-                  itemObj.callNumber = item.callNumber;
-                  itemObj.location = item.location;
-                  itemObj.itemType = item.item_type;
-                  itemObj['_circulation'] = circulation;
+                  item.title = doc.metadata.title;
+                  let itemObj = this.createItem(item);
                   items.push(itemObj);
                 }
                 return items;
             } else {
-                return <Item[]>res;
+                return res.map(item => {return this.createItem(item)});
             }
         });
     }
 
-    loanItem(item: Item, patron: Patron) {
+    loanItem(item: ItemUI, patron: Patron) {
       const loan = {
-        "pid": item.pid,
+        "pid": item.id,
         "patron_barcode": patron.barcode,
-        "start_date": item.startDate.format('YYYY-MM-DD'),
+        "start_date": moment().format('YYYY-MM-DD'),
         "end_date": item.endDate.format('YYYY-MM-DD')
       }
       return this.http.post(this.loanUrl, loan);
+    }
+
+    updateItem(item: Item) : Observable<Item> {
+      return this.http.put<Item>(this.loanUrl, item);
     }
 }

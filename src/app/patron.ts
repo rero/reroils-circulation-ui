@@ -1,6 +1,6 @@
 import { Moment } from 'moment';
 
-export class Patron {
+export interface Patron {
   id: number;
   barcode: string;
   firstname: string;
