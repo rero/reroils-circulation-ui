@@ -1,28 +1,45 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Item } from '../item';
+import { ItemUI, ItemAction } from '../item';
+import { Patron } from '../patron';
 
-
+/**
+ * Items list Component
+ */
 @Component({
   selector: 'reroils-circulation-items-list',
   templateUrl: './items-list.component.html',
   styleUrls: ['./items-list.component.css']
 })
 export class ItemsListComponent {
-  @Input() items: Item[];
-  @Output() onRemoveItem = new EventEmitter<Item>();
-  @Output() onValidateItems = new EventEmitter<Item[]>();
+  @Input() items: ItemUI[];
+  @Input() patron: Patron;
+  @Output() removeItem = new EventEmitter<ItemUI>();
+  @Output() applyItems = new EventEmitter<ItemUI[]>();
 
   constructor() { }
 
-  removeItem(item: Item) {
+  remove(item: ItemUI) {
     if (item) {
-      this.onRemoveItem.emit(item);
+      this.removeItem.emit(item);
     }
   }
 
-  validateItems(items: Item[]) {
+  apply(items: ItemUI[]) {
      if (items.length) {
-      this.onValidateItems.emit(items);
+      this.applyItems.emit(items);
     }
+  }
+
+  endDate(item: ItemUI) {
+    return item.endDate(this.patron);
+  }
+  // TODO: move to a ItemsList class
+  hasPendingActions() {
+    if (this.patron) {
+      if (this.items.filter(item => item.getAction(this.patron) !== ItemAction.no).length > 0) {
+        return true;
+      }
+    }
+    return false;
   }
 }

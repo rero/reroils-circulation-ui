@@ -11,8 +11,8 @@
         <span *ngIf="patron.first_name">{{ patron.first_name }} </span>
       </h3>
     </div>
-    <div class="col-md-2">
-      <button type="button" class="btn btn-danger pull-right" (click)="clearPatron()">
+    <div *ngIf="!info" class="col-md-2">
+      <button type="button" class="btn btn-danger pull-right" (click)="clear()">
         <i class="fa fa-close" aria-hidden="true"></i>
       </button>
     </div>
@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-md-6">
           <div>
-            <span *ngIf="patron.birth_date">{{ 'birthdate'|translate }}: {{ patron.birth_date | nicedate }}</span>
+            <span *ngIf="patron.birth_date">{{ patron.birth_date | nicedate }}</span>
           </div>
           <div>
             <span *ngIf="patron.city">{{ patron.city}}</span>
@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-6">
           <div>
-            <span *ngIf="patron.patron_type">{{ patron.patron_type }}</span>
+            <span *ngIf="patron.patron_type">{{ patron.patron_type | translate}}</span>
           </div>
           <div>
             <span *ngIf="patron.barcode">{{ patron.barcode }}</span>

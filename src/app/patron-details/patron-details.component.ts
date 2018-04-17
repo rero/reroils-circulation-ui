@@ -1,7 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Patron } from '../patron';
 
-
+/**
+ * Patron Informations Component
+ */
 @Component({
   selector: 'reroils-circulation-patron-details',
   templateUrl: './patron-details.component.html',
@@ -9,11 +11,12 @@ import { Patron } from '../patron';
 })
 export class PatronDetailsComponent {
   @Input() patron: Patron;
-  @Output() onClearPatron = new EventEmitter<Patron>();
+  @Output() clearPatron = new EventEmitter<Patron>();
+  @Input() info: boolean;
 
-  clearPatron() {
+  clear() {
     if (this.patron) {
-      this.onClearPatron.emit(this.patron);
+      this.clearPatron.emit(this.patron);
     }
   }
 }

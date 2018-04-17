@@ -5,11 +5,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Patron } from './patron';
 import 'rxjs/add/operator/map';
 
-
+/**
+ * Patron Services
+ *
+ * to interact with invenio REST API
+ */
 @Injectable()
 export class PatronsService {
 
-  patronsUrl: string;  // URL to web api
+  patronsUrl: string;
 
   constructor(private http: HttpClient, private urlPrefix: URLPrefixService) {
     this.patronsUrl = urlPrefix.patronsURL;

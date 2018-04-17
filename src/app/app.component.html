@@ -1,20 +1,33 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div class="row">
+  <reroils-circulation-confirm
+    [content]="confirm_message"
+    (confirm)="confirmRemovePatron($event)"
+  ></reroils-circulation-confirm>
   <div class="col-md-6">
     <h3>{{ 'Checkin / Checkout' | translate }}</h3>
     <reroils-circulation-search-bar
       [placeholder]="placeholder"
       [searchText]="searchText"
-      (onSearch)="searchValueUpdated($event)"
+      (search)="searchValueUpdated($event)"
     ></reroils-circulation-search-bar>
     <reroils-circulation-user-message
       [message]="message"
     ></reroils-circulation-user-message>
   </div>
-  <div class="col-md-6">
+  <div *ngIf="patron" class="col-md-6">
     <reroils-circulation-patron-details
       [patron]="patron"
-      (onClearPatron)="clearPatron($event)"
+      [info]="false"
+      (clearPatron)="clearPatron($event)"
+    ></reroils-circulation-patron-details>
+  </div>
+  <div *ngIf="patron_info" class="col-md-6 text-muted">
+    <reroils-circulation-patron-details
+      [patron]="patron_info"
+      [info]="true"
+      (clearPatron)="clearPatron($event)"
     ></reroils-circulation-patron-details>
   </div>
 </div>
@@ -22,8 +35,9 @@
   <div class="col-md-12">
     <reroils-circulation-items-list
       [items]="items"
-      (onRemoveItem)="removeItem($event)"
-      (onValidateItems)="validateItems($event)"
+      [patron]="patron"
+      (removeItem)="removeItem($event)"
+      (applyItems)="applyItems($event)"
     ></reroils-circulation-items-list>
   </div>
 </div>

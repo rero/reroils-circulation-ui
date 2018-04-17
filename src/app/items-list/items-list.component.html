@@ -1,29 +1,60 @@
+
+
 <div *ngIf="items.length">
   <table class="table table-bordered">
     <tr>
-      <th>{{ 'Title' | translate }}</th>
-      <th>{{ 'Item' | translate }}</th>
-      <th>{{ 'Location' | translate }}</th>
-      <th>{{ 'Return date' | translate }}</th>
-      <th>{{ 'Actions' | translate }}</th>
-      <th>{{ 'Remove' | translate }}</th>
+      <th>{{ 'Document' | translate }}</th>
+      <th class="text-center">{{ 'Item' | translate }}</th>
+      <th class="text-center">{{ 'Location' | translate }}</th>
+      <th class="text-center">{{ 'Status' | translate }}</th>
+      <th class="text-center">{{ 'Requests' | translate }}</th>
+      <th class="text-center">{{ 'Due Date' | translate }}</th>
+      <th class="text-center" *ngIf="patron">{{ 'Action' | translate }}</th>
+      <th class="text-center">{{ 'Action done' | translate }}</th>
     </tr>
-    <tr *ngFor="let item of items" class="success">
-      <td>{{ item.title }}</td>
-      <td>{{ item.barcode }}</td>
-      <td>{{ item.location }}</td>
-      <td>{{ item.endDate | nicedate }}</td>
-      <td>
-        <select class="form-control">
-          <option>Checkout</option>
-        </select>
+    <tr *ngFor="let item of items"
+        [ngClass]="{
+          'success': item.isActionLoan(patron),
+          'warning': item.isActionReturn(patron)
+        }"
+    >
+      <td>{{ item.item.title }}</td>
+      <td class="text-right">{{ item.item.barcode }}</td>
+      <td class="text-right">{{ item.item.location_name }}</td>
+      <td class="text-right">{{ item.item._circulation.status | translate}}</td>
+      <td class="text-right"><span *ngIf="item.requestedPosition(patron)">{{ item.requestedPosition(patron) }} / </span><span *ngIf="item.requests.length">{{ item.requests.length }}</span></td>
+      <td class="text-right">
+        <span [ngClass]="{'text-danger': item.loanExpired}"
+              *ngIf="endDate(item)">
+          {{ endDate(item) | nicedate }}
+        </span>
       </td>
-      <td>
-        <button type="button" class="btn btn-xs btn-danger pull-right" (click)="removeItem(item)">
-          <i class="fa fa-close fa-xs" aria-hidden="true"></i>
-        </button>
-      </td>
+      <td class="text-right" *ngIf="patron">
+        <div class="btn-group" *ngIf="item.getActions(patron).length">
+          <button type="button"
+                  class="btn btn-sm dropdown-toggle"
+                  [ngClass]="{'disabled': (item.getActions(patron).length < 2)}"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+          >
+            {{ item.getAction(patron) | translate }} <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li (click)="item.setAction(action)" *ngFor="let action of item.getActions(patron)"><a>{{ action | translate }}</a></li>
+          </ul>
+        </div>
+    </td>
+    <td class="text-right">
+      <span *ngIf="item.done">{{ item.done | translate }} <i class="fa fa-check text-success"></i> </span>
+    </td>
     </tr>
   </table>
-  <button type="button" class="btn btn-success pull-right" (click)="validateItems(items)">{{ 'Validate' | translate }}</button>
+  <button *ngIf="patron"
+          [disabled]="!hasPendingActions()"
+          type="button"
+          class="btn btn-success pull-right"
+          (click)="apply(items)">
+      {{ 'Apply' | translate }}
+  </button>
 </div>
