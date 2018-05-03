@@ -1,6 +1,6 @@
 {
   "name": "reroils-circulation-ui",
-  "version": "0.0.0",
+  "version": "0.1.0a12",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
