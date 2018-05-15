@@ -16,7 +16,9 @@ export class ItemsListComponent {
   @Output() removeItem = new EventEmitter<ItemUI>();
   @Output() applyItems = new EventEmitter<ItemUI[]>();
 
-  constructor() { }
+  constructor() {
+    this.items =  new Array<ItemUI>();
+  }
 
   remove(item: ItemUI) {
     if (item) {
@@ -27,6 +29,15 @@ export class ItemsListComponent {
   apply(items: ItemUI[]) {
      if (items.length) {
       this.applyItems.emit(items);
+    }
+  }
+
+  warningRequests(item) {
+    if (this.patron) {
+      return item.hasRequests
+          && (item.getAction(this.patron) === ItemAction.return);
+    } else {
+      return item.hasRequests;
     }
   }
 

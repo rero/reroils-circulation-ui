@@ -1,0 +1,15 @@
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p translate>Exit without saving changes?</p>
+    <button type="button"
+            class="btn btn-default"
+            (click)="doConfirm(true)"
+            translate
+    >Yes</button>
+    <button type="button"
+            class="btn btn-primary"
+            (click)="doConfirm(false)"
+            translate
+    >Cancel</button>
+  </div>
+</ng-template>

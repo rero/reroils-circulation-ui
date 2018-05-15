@@ -13,26 +13,41 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PatronsService {
 
-  patronsUrl: string;
-
-  constructor(private http: HttpClient, private urlPrefix: URLPrefixService) {
-    this.patronsUrl = urlPrefix.patronsURL;
+  constructor(private http: HttpClient,
+              private urlPrefix: URLPrefixService) {
+              this.logged_user = this.getLoggedUser();
   }
 
-  getPatron (card_number: string): Observable<Patron[]> {
+  public logged_user: Observable<Patron>;
+
+  getPatron(card_number: string): Observable<Patron[]> {
     return this.http
-               .get(this.patronsUrl + card_number)
-               .map(res => {
+               .get(this.urlPrefix.patronsURL + card_number)
+               .map(response => {
                  // invenio format
-                 if (res['hits']) {
+                 if (response['hits']) {
                    const patrons = Array();
-                   const metadata = res['hits']['hits'];
+                   const metadata = response['hits']['hits'];
                    metadata.forEach(function (value) {
                      patrons.push(value.metadata);
                    });
                    return <Patron[]> patrons;
                  } else {
-                   return <Patron[]>res;
+                   return <Patron[]>response;
+                 }
+               });
+  }
+
+  getLoggedUser(): Observable<Patron> {
+        return this.http
+               .get(this.urlPrefix.loggedUserURL)
+               .map(response => {
+                 // invenio format
+                 if (response['hits']) {
+                   const user = response['hits']['hits'][0];
+                   return <Patron> user;
+                 } else {
+                   return <Patron>response;
                  }
                });
   }

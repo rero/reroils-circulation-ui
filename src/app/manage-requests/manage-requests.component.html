@@ -1,0 +1,21 @@
+  <h2>{{ 'Requests' | translate }}</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <reroils-circulation-search-bar
+      [placeholder]="placeholder"
+      [searchText]="searchText"
+      (search)="searchValueUpdated($event)"
+      ></reroils-circulation-search-bar>
+      <reroils-circulation-user-message
+    [message]="message"
+    ></reroils-circulation-user-message>
+    </div>
+  </div>
+  <div *ngIf="items.length" class="row">
+    <div class="col-md-12">
+    <h3>Requested Items</h3>
+      <reroils-circulation-requested-items-list
+      [items]="items"
+      ></reroils-circulation-requested-items-list>
+    </div>
+  </div>

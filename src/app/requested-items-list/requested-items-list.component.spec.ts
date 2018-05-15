@@ -1,20 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PatronDetailsComponent } from './patron-details.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { WebpackTranslateLoader } from '../webpack-translate-loader';
 import { NicedatePipe } from '../nicedate.pipe';
 
-describe('PatronDetailsComponent', () => {
-  let component: PatronDetailsComponent;
-  let fixture: ComponentFixture<PatronDetailsComponent>;
+import { RequestedItemsListComponent } from './requested-items-list.component';
+
+describe('RequestedItemsListComponent', () => {
+  let component: RequestedItemsListComponent;
+  let fixture: ComponentFixture<RequestedItemsListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        PatronDetailsComponent,
-        NicedatePipe
-      ],
+      declarations: [ RequestedItemsListComponent, NicedatePipe ],
       imports: [
         TranslateModule.forRoot({
           loader: {
@@ -28,7 +25,7 @@ describe('PatronDetailsComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PatronDetailsComponent);
+    fixture = TestBed.createComponent(RequestedItemsListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

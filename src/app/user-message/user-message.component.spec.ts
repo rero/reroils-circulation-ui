@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserMessageComponent } from './user-message.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { WebpackTranslateLoader } from '../webpack-translate-loader';
 
 describe('UserMessageComponent', () => {
   let component: UserMessageComponent;
@@ -8,7 +10,15 @@ describe('UserMessageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserMessageComponent ]
+      declarations: [ UserMessageComponent ],
+      imports: [
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: WebpackTranslateLoader
+          }
+        })
+      ]
     })
     .compileComponents();
   }));

@@ -1,0 +1,3203 @@
+{
+  "patrons": [
+    {
+      "name": "Casalini, Simonetta",
+      "first_name": "Simonetta",
+      "last_name": "Casalini",
+      "$schema": "https://ils.test.rero.ch/schema/patrons/patron-v0.0.1.json",
+      "barcode": "2050124311",
+      "postal_code": "2300",
+      "street": "Avenue Leopold-Robert, 132",
+      "pid": "2",
+      "birth_date": "1969-06-07",
+      "roles": [
+        "patrons"
+      ],
+      "email": "simolibri07@gmail.com",
+      "id": "2",
+      "phone": "+41324993585",
+      "is_staff": false,
+      "is_patron": true,
+      "city": "La Chaux-de-Fonds",
+      "patron_type": "standard_user"
+    },
+    {
+      "name": "de Figueiredo Santos, Helder",
+      "first_name": "Helder",
+      "last_name": "de Figueiredo Santos",
+      "$schema": "https://ils.test.rero.ch/schema/patrons/patron-v0.0.1.json",
+      "barcode": "2030124287",
+      "postal_code": "1950",
+      "street": "Rue des Aub\u00e9pines, 15",
+      "pid": "3",
+      "birth_date": "2004-10-11",
+      "roles": [
+        "patrons"
+      ],
+      "email": "helder.figueiredo@hotmail.com",
+      "id": "3",
+      "is_staff": false,
+      "is_patron": true,
+      "city": "Sion",
+      "patron_type": "standard_user"
+    },
+    {
+      "name": "Charbonnet, Virgile",
+      "first_name": "Virgile",
+      "last_name": "Charbonnet",
+      "$schema": "https://ils.test.rero.ch/schema/patrons/patron-v0.0.1.json",
+      "barcode": "2030155308",
+      "postal_code": "1891",
+      "street": "Chemin Vers-Chez-Borr\u00e9, 172",
+      "pid": "4",
+      "birth_date": "1969-02-01",
+      "roles": [
+        "patrons"
+      ],
+      "email": "virgile.charbonnet@vionnaz.ch",
+      "id": "4",
+      "phone": "+41244857275",
+      "is_staff": false,
+      "is_patron": true,
+      "city": "V\u00e9rossaz",
+      "patron_type": "standard_user"
+    }
+  ],
+  "items": [
+    {
+      "id": "11",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00011",
+      "title": "Motivazione allo studio dell'italiano nei discenti stranieri presso l'Universit\u00e0 italiana per stranieri di Perugia nell'anno accademico 1988 : analisi dei questionari A",
+      "barcode": "10000000011",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "11",
+      "item_type": "no_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "12",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00012",
+      "title": "Motivazione allo studio dell'italiano nei discenti stranieri presso l'Universit\u00e0 italiana per stranieri di Perugia nell'anno accademico 1988 : analisi dei questionari A",
+      "barcode": "10000000012",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-22",
+            "patron_barcode": "2030155308",
+            "id": "453ff63c-9116-46f4-8ecb-33669e64fa55",
+            "pickup_member_pid": "2",
+            "pickup_member_name": "National Documentation Centre 2",
+            "end_date": "2018-06-21"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "12",
+      "item_type": "standard_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 1,
+      "member_pid": "1"
+    },
+    {
+      "id": "13",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00013",
+      "title": "Motivazione allo studio dell'italiano nei discenti stranieri presso l'Universit\u00e0 italiana per stranieri di Perugia nell'anno accademico 1988 : analisi dei questionari A",
+      "barcode": "10000000013",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "13",
+      "item_type": "short_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "27",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00027",
+      "title": "Segno della gloria",
+      "barcode": "10000000027",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "27",
+      "item_type": "no_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "28",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00028",
+      "title": "Segno della gloria",
+      "barcode": "10000000028",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-05",
+            "patron_barcode": "2030155308",
+            "id": "501bd92c-88c2-42db-bf5f-5bcf6bb6f47e",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-05-20"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "28",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 1,
+      "member_pid": "3"
+    },
+    {
+      "id": "25",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00025",
+      "title": "I \"giovani cattolici\" nel mezzogiorno d'Italia dall'Unit\u00e0 al 1948",
+      "barcode": "10000000025",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "25",
+      "item_type": "no_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "26",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00026",
+      "title": "I \"giovani cattolici\" nel mezzogiorno d'Italia dall'Unit\u00e0 al 1948",
+      "barcode": "10000000026",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-11",
+            "patron_barcode": "2030124287",
+            "id": "43cb16f5-c02c-4c05-ba32-6aec236a9f83",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-06-25"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "26",
+      "item_type": "standard_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "33",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00033",
+      "title": "Contributo all'edizione delle \"Cento novelle amorose degli accademici incogniti\"",
+      "barcode": "10000000033",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "33",
+      "item_type": "standard_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "34",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00034",
+      "title": "Contributo all'edizione delle \"Cento novelle amorose degli accademici incogniti\"",
+      "barcode": "10000000034",
+      "_circulation": {
+        "holdings": [],
+        "status": "missing"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "34",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "35",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00035",
+      "title": "Contributo all'edizione delle \"Cento novelle amorose degli accademici incogniti\"",
+      "barcode": "10000000035",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "35",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "36",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00036",
+      "title": "Contributo all'edizione delle \"Cento novelle amorose degli accademici incogniti\"",
+      "barcode": "10000000036",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-03-29",
+            "patron_barcode": "2030155308",
+            "id": "46446b07-3876-4cb0-90c4-5ae3a1c2d3fb",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-04-28"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "36",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 1,
+      "member_pid": "2"
+    },
+    {
+      "id": "37",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00037",
+      "title": "Contributo all'edizione delle \"Cento novelle amorose degli accademici incogniti\"",
+      "barcode": "10000000037",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "37",
+      "item_type": "short_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "38",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00038",
+      "title": "Vademecum di educazione linguistica",
+      "barcode": "10000000038",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-16",
+            "patron_barcode": "2030124287",
+            "id": "6c2ebf38-508f-463b-8b73-40555c509072",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-05-16"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "38",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "39",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00039",
+      "title": "Vademecum di educazione linguistica",
+      "barcode": "10000000039",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "39",
+      "item_type": "no_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "30",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00030",
+      "title": "Il Dio bambino : la devozione a Ges\u00f9 bambino dai vangeli dell'infanzia a Edith Stein",
+      "barcode": "10000000030",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "30",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "31",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00031",
+      "title": "Il Dio bambino : la devozione a Ges\u00f9 bambino dai vangeli dell'infanzia a Edith Stein",
+      "barcode": "10000000031",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-13",
+            "patron_barcode": "2030155308",
+            "id": "f994249a-d2d4-4e2f-b679-494671581cab",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-06-12"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "31",
+      "item_type": "standard_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 1,
+      "member_pid": "1"
+    },
+    {
+      "id": "32",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00032",
+      "title": "Il Dio bambino : la devozione a Ges\u00f9 bambino dai vangeli dell'infanzia a Edith Stein",
+      "barcode": "10000000032",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "32",
+      "item_type": "no_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "40",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00040",
+      "title": "Il mito del Giudizio universale [nella Cappella Sistina]",
+      "barcode": "10000000040",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-09",
+            "patron_barcode": "2030155308",
+            "id": "0ed971a2-1b65-4c31-ad32-4a851af747d8",
+            "pickup_member_pid": "2",
+            "pickup_member_name": "National Documentation Centre 2",
+            "end_date": "2018-06-08"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "40",
+      "item_type": "standard_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 1,
+      "member_pid": "1"
+    },
+    {
+      "id": "41",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00041",
+      "title": "Il mito del Giudizio universale [nella Cappella Sistina]",
+      "barcode": "10000000041",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "41",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "62",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00062",
+      "title": "Torre Mordillo 1987-1990 : le relazioni egee di una comunit\u00e0 protostorica della Sibaritide",
+      "barcode": "10000000062",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "62",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "63",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00063",
+      "title": "Torre Mordillo 1987-1990 : le relazioni egee di una comunit\u00e0 protostorica della Sibaritide",
+      "barcode": "10000000063",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-07",
+            "patron_barcode": "2030124287",
+            "id": "88c2d69f-7bf9-4732-8f41-2fdd2c0b00f1",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-06-21"
+          },
+          {
+            "start_date": "2018-05-03",
+            "patron_barcode": "2030155308",
+            "id": "ef163adf-88d6-4c53-8198-b1d0787fec00",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre 2",
+            "end_date": "2018-06-17"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "63",
+      "item_type": "no_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 1,
+      "member_pid": "1"
+    },
+    {
+      "id": "64",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00064",
+      "title": "Torre Mordillo 1987-1990 : le relazioni egee di una comunit\u00e0 protostorica della Sibaritide",
+      "barcode": "10000000064",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "64",
+      "item_type": "standard_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "53",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00053",
+      "title": "Marialuisa de Romans : viaggio nel quadrato, 1976-78",
+      "barcode": "10000000053",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-03",
+            "patron_barcode": "2050124311",
+            "id": "d3e96ca7-583e-422d-b12e-7a925c0da569",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-06-02"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "53",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 1,
+      "member_pid": "2"
+    },
+    {
+      "id": "54",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00054",
+      "title": "Marialuisa de Romans : viaggio nel quadrato, 1976-78",
+      "barcode": "10000000054",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "54",
+      "item_type": "no_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "55",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00055",
+      "title": "Marialuisa de Romans : viaggio nel quadrato, 1976-78",
+      "barcode": "10000000055",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "55",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "56",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00056",
+      "title": "Marialuisa de Romans : viaggio nel quadrato, 1976-78",
+      "barcode": "10000000056",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "56",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "57",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00057",
+      "title": "Marialuisa de Romans : viaggio nel quadrato, 1976-78",
+      "barcode": "10000000057",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "57",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "58",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00058",
+      "title": "L'opera completa",
+      "barcode": "10000000058",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "58",
+      "item_type": "short_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "59",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00059",
+      "title": "L'opera completa",
+      "barcode": "10000000059",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "59",
+      "item_type": "standard_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "60",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00060",
+      "title": "L'opera completa",
+      "barcode": "10000000060",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "60",
+      "item_type": "no_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "61",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00061",
+      "title": "L'opera completa",
+      "barcode": "10000000061",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-19",
+            "patron_barcode": "2030155308",
+            "id": "2ad55954-6b76-400f-9bf7-89aa28a1f079",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-05-19"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "61",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 1,
+      "member_pid": "2"
+    },
+    {
+      "id": "69",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00069",
+      "title": "La presenza della croce nelle principali lettere di s. Paolo",
+      "barcode": "10000000069",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "69",
+      "item_type": "no_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "70",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00070",
+      "title": "La presenza della croce nelle principali lettere di s. Paolo",
+      "barcode": "10000000070",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "70",
+      "item_type": "standard_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "71",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00071",
+      "title": "La presenza della croce nelle principali lettere di s. Paolo",
+      "barcode": "10000000071",
+      "_circulation": {
+        "holdings": [],
+        "status": "missing"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "71",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "72",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00072",
+      "title": "La presenza della croce nelle principali lettere di s. Paolo",
+      "barcode": "10000000072",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-27",
+            "patron_barcode": "2030124287",
+            "id": "698358cf-d206-41b2-8119-fd4c7c4fb4fa",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-05-27"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "72",
+      "item_type": "short_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "73",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00073",
+      "title": "La presenza della croce nelle principali lettere di s. Paolo",
+      "barcode": "10000000073",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-12",
+            "patron_barcode": "2050124311",
+            "id": "198d5c9d-bb9d-41c8-a8a4-ffa1feb31b29",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-06-26"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "73",
+      "item_type": "standard_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 1,
+      "member_pid": "2"
+    },
+    {
+      "id": "66",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00066",
+      "title": "Il pitagorismo di Niccol\u00f2 Copernico",
+      "barcode": "10000000066",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "66",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "67",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00067",
+      "title": "Il pitagorismo di Niccol\u00f2 Copernico",
+      "barcode": "10000000067",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-09",
+            "patron_barcode": "2050124311",
+            "id": "76233b6d-5956-4ae8-af69-1236a3fd3a24",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-06-08"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "67",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 1,
+      "member_pid": "1"
+    },
+    {
+      "id": "68",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00068",
+      "title": "Il pitagorismo di Niccol\u00f2 Copernico",
+      "barcode": "10000000068",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "68",
+      "item_type": "no_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "94",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00094",
+      "title": "Sonos : strumenti della musica popolare sarda",
+      "barcode": "10000000094",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "94",
+      "item_type": "standard_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "95",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00095",
+      "title": "Sonos : strumenti della musica popolare sarda",
+      "barcode": "10000000095",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "95",
+      "item_type": "short_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "96",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00096",
+      "title": "Sonos : strumenti della musica popolare sarda",
+      "barcode": "10000000096",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-03-25",
+            "patron_barcode": "2050124311",
+            "id": "73fbc488-e21c-4012-8193-f1d3c4d6ba37",
+            "pickup_member_pid": "2",
+            "pickup_member_name": "National Documentation Centre 2",
+            "end_date": "2018-05-09"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "96",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 1,
+      "member_pid": "2"
+    },
+    {
+      "id": "86",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00086",
+      "title": "La logica del genere",
+      "barcode": "10000000086",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "86",
+      "item_type": "short_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "87",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00087",
+      "title": "La logica del genere",
+      "barcode": "10000000087",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-03-25",
+            "patron_barcode": "2030124287",
+            "id": "e15fb200-645e-4db6-a111-84f629a7f5a2",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-04-24"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "87",
+      "item_type": "no_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "88",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00088",
+      "title": "La logica del genere",
+      "barcode": "10000000088",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "88",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "89",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00089",
+      "title": "La logica del genere",
+      "barcode": "10000000089",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "89",
+      "item_type": "no_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "90",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00090",
+      "title": "La logica del genere",
+      "barcode": "10000000090",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "90",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "97",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00097",
+      "title": "Puglia",
+      "barcode": "10000000097",
+      "_circulation": {
+        "holdings": [],
+        "status": "missing"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "97",
+      "item_type": "no_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "98",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00098",
+      "title": "Puglia",
+      "barcode": "10000000098",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "98",
+      "item_type": "no_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "99",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00099",
+      "title": "Puglia",
+      "barcode": "10000000099",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-03-26",
+            "patron_barcode": "2050124311",
+            "id": "228f50a0-be96-4d18-a7a0-32e38cd37e5d",
+            "pickup_member_pid": "2",
+            "pickup_member_name": "National Documentation Centre 2",
+            "end_date": "2018-04-25"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "99",
+      "item_type": "no_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "100",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00100",
+      "title": "Puglia",
+      "barcode": "10000000100",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "100",
+      "item_type": "short_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "80",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00080",
+      "title": "Giornalismo e letteratura",
+      "barcode": "10000000080",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "80",
+      "item_type": "standard_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "81",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00081",
+      "title": "Giornalismo e letteratura",
+      "barcode": "10000000081",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "81",
+      "item_type": "short_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "82",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00082",
+      "title": "Giornalismo e letteratura",
+      "barcode": "10000000082",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "82",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "83",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00083",
+      "title": "Giornalismo e letteratura",
+      "barcode": "10000000083",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-22",
+            "patron_barcode": "2030155308",
+            "id": "cd65097b-c978-4231-8d03-98131f9cae45",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-06-21"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "83",
+      "item_type": "short_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "104",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00104",
+      "title": "Il libro delle promesse e delle predizioni di Dio",
+      "barcode": "10000000104",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-25",
+            "patron_barcode": "2050124311",
+            "id": "d50081b5-7c75-42d8-98f1-03695ed07fee",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-06-09"
+          },
+          {
+            "start_date": "2018-04-05",
+            "patron_barcode": "2030155308",
+            "id": "5eae0e8f-d1ed-4ccd-bef2-2ac8dd05b9f3",
+            "pickup_member_pid": "2",
+            "pickup_member_name": "National Documentation Centre 2",
+            "end_date": "2018-05-20"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "104",
+      "item_type": "no_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 1,
+      "member_pid": "1"
+    },
+    {
+      "id": "105",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00105",
+      "title": "Il libro delle promesse e delle predizioni di Dio",
+      "barcode": "10000000105",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "105",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "106",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00106",
+      "title": "Il libro delle promesse e delle predizioni di Dio",
+      "barcode": "10000000106",
+      "_circulation": {
+        "holdings": [],
+        "status": "missing"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "106",
+      "item_type": "no_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "107",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00107",
+      "title": "Il libro delle promesse e delle predizioni di Dio",
+      "barcode": "10000000107",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "107",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "114",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00114",
+      "title": "1947-1987 : i quarant'anni del Banco di Roma per la Svizzera nella realt\u00e0 luganese e ticinese",
+      "barcode": "10000000114",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "114",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "115",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00115",
+      "title": "1947-1987 : i quarant'anni del Banco di Roma per la Svizzera nella realt\u00e0 luganese e ticinese",
+      "barcode": "10000000115",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "115",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "116",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00116",
+      "title": "1947-1987 : i quarant'anni del Banco di Roma per la Svizzera nella realt\u00e0 luganese e ticinese",
+      "barcode": "10000000116",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-28",
+            "patron_barcode": "2030155308",
+            "id": "5b1e2f52-e973-4a68-9e1b-23e11a9d15b4",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-06-12"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "116",
+      "item_type": "short_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "117",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00117",
+      "title": "1947-1987 : i quarant'anni del Banco di Roma per la Svizzera nella realt\u00e0 luganese e ticinese",
+      "barcode": "10000000117",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "117",
+      "item_type": "short_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "118",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00118",
+      "title": "1947-1987 : i quarant'anni del Banco di Roma per la Svizzera nella realt\u00e0 luganese e ticinese",
+      "barcode": "10000000118",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "118",
+      "item_type": "no_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "119",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00119",
+      "title": "Rendiconto Ustat 2002",
+      "barcode": "10000000119",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "119",
+      "item_type": "standard_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "120",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00120",
+      "title": "Rendiconto Ustat 2002",
+      "barcode": "10000000120",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-22",
+            "patron_barcode": "2030124287",
+            "id": "a8fec4c7-a574-405f-a774-5feaddce4880",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-05-22"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "120",
+      "item_type": "no_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "121",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00121",
+      "title": "Rendiconto Ustat 2002",
+      "barcode": "10000000121",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-02",
+            "patron_barcode": "2030155308",
+            "id": "01bf62b5-1a1e-4937-a625-65390dec9a6e",
+            "pickup_member_pid": "2",
+            "pickup_member_name": "National Documentation Centre 2",
+            "end_date": "2018-06-01"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "121",
+      "item_type": "no_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "122",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00122",
+      "title": "Rendiconto Ustat 2002",
+      "barcode": "10000000122",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "122",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "123",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00123",
+      "title": "Rendiconto Ustat 2002",
+      "barcode": "10000000123",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "123",
+      "item_type": "no_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "136",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00136",
+      "title": "Dai ricordi di un fuoruscito, 1922-1933",
+      "barcode": "10000000136",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "136",
+      "item_type": "standard_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "137",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00137",
+      "title": "Dai ricordi di un fuoruscito, 1922-1933",
+      "barcode": "10000000137",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "137",
+      "item_type": "standard_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "138",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00138",
+      "title": "Dai ricordi di un fuoruscito, 1922-1933",
+      "barcode": "10000000138",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-01",
+            "patron_barcode": "2030155308",
+            "id": "304d499f-a28b-48d0-8c88-3723e3d29b1d",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-05-31"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "138",
+      "item_type": "no_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 1,
+      "member_pid": "3"
+    },
+    {
+      "id": "139",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00139",
+      "title": "Dai ricordi di un fuoruscito, 1922-1933",
+      "barcode": "10000000139",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "139",
+      "item_type": "standard_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "133",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00133",
+      "title": "Delle lettere di M. Claudio Tolomei Libri sette ...",
+      "barcode": "10000000133",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "133",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "134",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00134",
+      "title": "Delle lettere di M. Claudio Tolomei Libri sette ...",
+      "barcode": "10000000134",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-03-23",
+            "patron_barcode": "2050124311",
+            "id": "f93b250d-b76f-48cd-ad63-bea7fc964244",
+            "pickup_member_pid": "2",
+            "pickup_member_name": "National Documentation Centre 2",
+            "end_date": "2018-05-07"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "134",
+      "item_type": "standard_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "135",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00135",
+      "title": "Delle lettere di M. Claudio Tolomei Libri sette ...",
+      "barcode": "10000000135",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-19",
+            "patron_barcode": "2050124311",
+            "id": "bbb46fb9-e31f-4f29-8ae7-3e37f146afe4",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-06-03"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "135",
+      "item_type": "no_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "154",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00154",
+      "title": "Carmina Burana",
+      "barcode": "10000000154",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "154",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "155",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00155",
+      "title": "Carmina Burana",
+      "barcode": "10000000155",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "155",
+      "item_type": "standard_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "156",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00156",
+      "title": "Carmina Burana",
+      "barcode": "10000000156",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-03-23",
+            "patron_barcode": "2030124287",
+            "id": "3d9400ba-9469-4815-8a6a-85164a9831f9",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-04-22"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "156",
+      "item_type": "standard_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "157",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00157",
+      "title": "Carmina Burana",
+      "barcode": "10000000157",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "157",
+      "item_type": "no_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "158",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00158",
+      "title": "Osservazioni sulla lingua italiana",
+      "barcode": "10000000158",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "158",
+      "item_type": "standard_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "159",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00159",
+      "title": "Osservazioni sulla lingua italiana",
+      "barcode": "10000000159",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "159",
+      "item_type": "standard_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "160",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00160",
+      "title": "Osservazioni sulla lingua italiana",
+      "barcode": "10000000160",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "160",
+      "item_type": "no_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "161",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00161",
+      "title": "Osservazioni sulla lingua italiana",
+      "barcode": "10000000161",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-08",
+            "patron_barcode": "2030155308",
+            "id": "41891dca-b7e3-4a70-8c8f-86383ab5da7c",
+            "pickup_member_pid": "2",
+            "pickup_member_name": "National Documentation Centre 2",
+            "end_date": "2018-06-07"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "161",
+      "item_type": "no_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 1,
+      "member_pid": "3"
+    },
+    {
+      "id": "162",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00162",
+      "title": "Osservazioni sulla lingua italiana",
+      "barcode": "10000000162",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-07",
+            "patron_barcode": "2050124311",
+            "id": "9088907f-3199-494d-8ac5-44a8ce5469bf",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-06-21"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "162",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "164",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00164",
+      "title": "Europa delle regioni e confessioni religiose : leggi e provvedimenti regionali di interesse ecclesiastico in Italia e Spagna : atti del I colloquio tra studiosi italiani e spagnoli, Bologna, 28 marzo 2001",
+      "barcode": "10000000164",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-16",
+            "patron_barcode": "2050124311",
+            "id": "c4efd596-6a03-4cd3-8717-a6f3f4cd7b7c",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-05-31"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "164",
+      "item_type": "standard_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 1,
+      "member_pid": "2"
+    },
+    {
+      "id": "165",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00165",
+      "title": "Carte friulane del Quattrocento dall'archivio di San Cristoforo di Udine",
+      "barcode": "10000000165",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-19",
+            "patron_barcode": "2030155308",
+            "id": "9b378dc3-fb34-4fc3-b8d8-cc0ec8093cb0",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-07-03"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "165",
+      "item_type": "no_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 1,
+      "member_pid": "3"
+    },
+    {
+      "id": "166",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00166",
+      "title": "Carte friulane del Quattrocento dall'archivio di San Cristoforo di Udine",
+      "barcode": "10000000166",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "166",
+      "item_type": "standard_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "167",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00167",
+      "title": "Carte friulane del Quattrocento dall'archivio di San Cristoforo di Udine",
+      "barcode": "10000000167",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "167",
+      "item_type": "short_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "168",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00168",
+      "title": "Carte friulane del Quattrocento dall'archivio di San Cristoforo di Udine",
+      "barcode": "10000000168",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "168",
+      "item_type": "no_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "149",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00149",
+      "title": "Memorie storico-critiche della citt\u00e0 di Siena",
+      "barcode": "10000000149",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "149",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "150",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00150",
+      "title": "Memorie storico-critiche della citt\u00e0 di Siena",
+      "barcode": "10000000150",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "150",
+      "item_type": "standard_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "151",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00151",
+      "title": "Memorie storico-critiche della citt\u00e0 di Siena",
+      "barcode": "10000000151",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "151",
+      "item_type": "short_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "152",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00152",
+      "title": "Memorie storico-critiche della citt\u00e0 di Siena",
+      "barcode": "10000000152",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "152",
+      "item_type": "no_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "153",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00153",
+      "title": "Memorie storico-critiche della citt\u00e0 di Siena",
+      "barcode": "10000000153",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-03-24",
+            "patron_barcode": "2030155308",
+            "id": "a0899e72-ab70-430f-b31c-3b2d65b707f3",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-05-08"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "153",
+      "item_type": "standard_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "186",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00186",
+      "title": "Per la musica : organari, liutai nell'artigianato in Liguria",
+      "barcode": "10000000186",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "186",
+      "item_type": "standard_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "187",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00187",
+      "title": "Per la musica : organari, liutai nell'artigianato in Liguria",
+      "barcode": "10000000187",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-06",
+            "patron_barcode": "2050124311",
+            "id": "2838a7fe-5993-46ea-b75f-68e00dc27e06",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-05-21"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "187",
+      "item_type": "standard_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "188",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00188",
+      "title": "Per la musica : organari, liutai nell'artigianato in Liguria",
+      "barcode": "10000000188",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "188",
+      "item_type": "no_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "189",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00189",
+      "title": "Per la musica : organari, liutai nell'artigianato in Liguria",
+      "barcode": "10000000189",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "189",
+      "item_type": "no_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "177",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00177",
+      "title": "Il tomismo come filosofia cristiana nel pensiero di Leone XIII",
+      "barcode": "10000000177",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-14",
+            "patron_barcode": "2030124287",
+            "id": "226ffd6e-5009-434a-9881-72f3e60defe5",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-05-14"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "177",
+      "item_type": "standard_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "178",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00178",
+      "title": "Il tomismo come filosofia cristiana nel pensiero di Leone XIII",
+      "barcode": "10000000178",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "178",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "179",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00179",
+      "title": "Il tomismo come filosofia cristiana nel pensiero di Leone XIII",
+      "barcode": "10000000179",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-05",
+            "patron_barcode": "2050124311",
+            "id": "31723127-bd44-4eb2-a43b-5216052caae7",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-05-05"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "179",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 1,
+      "member_pid": "1"
+    },
+    {
+      "id": "180",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00180",
+      "title": "Il tomismo come filosofia cristiana nel pensiero di Leone XIII",
+      "barcode": "10000000180",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "180",
+      "item_type": "short_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "172",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00172",
+      "title": "Cara Mathilda : lettere a un'amica",
+      "barcode": "10000000172",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-15",
+            "patron_barcode": "2050124311",
+            "id": "a6d43388-4c84-484c-a5d7-45348ada18de",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-05-15"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "172",
+      "item_type": "no_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "173",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00173",
+      "title": "Cara Mathilda : lettere a un'amica",
+      "barcode": "10000000173",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "173",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "174",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00174",
+      "title": "Cara Mathilda : lettere a un'amica",
+      "barcode": "10000000174",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "174",
+      "item_type": "no_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "175",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00175",
+      "title": "Cara Mathilda : lettere a un'amica",
+      "barcode": "10000000175",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-30",
+            "patron_barcode": "2030155308",
+            "id": "ea9c1bb3-6fff-45f7-8e38-4f995d333821",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-06-14"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "175",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "176",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00176",
+      "title": "Cara Mathilda : lettere a un'amica",
+      "barcode": "10000000176",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "176",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "191",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00191",
+      "title": "La scena e la dynamis : (immaginario e struttura nelle sintesi futuriste)",
+      "barcode": "10000000191",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-07",
+            "patron_barcode": "2030124287",
+            "id": "4be4365a-7cfc-411b-9cd6-0de7d3520884",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-06-06"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "191",
+      "item_type": "no_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 1,
+      "member_pid": "2"
+    },
+    {
+      "id": "202",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00202",
+      "title": "Acta nuntiaturae Polonae : (1630-1636) / ed. Adalbertus Bili\u0144ski",
+      "barcode": "10000000202",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "202",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "203",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00203",
+      "title": "Acta nuntiaturae Polonae : (1630-1636) / ed. Adalbertus Bili\u0144ski",
+      "barcode": "10000000203",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-25",
+            "patron_barcode": "2030155308",
+            "id": "fb217005-a871-4e97-b968-3b768c13b654",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-06-09"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "203",
+      "item_type": "standard_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 1,
+      "member_pid": "3"
+    },
+    {
+      "id": "204",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00204",
+      "title": "Acta nuntiaturae Polonae : (1630-1636) / ed. Adalbertus Bili\u0144ski",
+      "barcode": "10000000204",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "204",
+      "item_type": "standard_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "205",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00205",
+      "title": "Acta nuntiaturae Polonae : (1630-1636) / ed. Adalbertus Bili\u0144ski",
+      "barcode": "10000000205",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-26",
+            "patron_barcode": "2050124311",
+            "id": "9239dcee-709e-4ef6-8bc4-0523752ad86d",
+            "pickup_member_pid": "2",
+            "pickup_member_name": "National Documentation Centre 2",
+            "end_date": "2018-05-26"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "205",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "214",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00214",
+      "title": "Segni e tracce di architettura romanica nel Novarese : rilievi e immagini",
+      "barcode": "10000000214",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "214",
+      "item_type": "no_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "215",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00215",
+      "title": "Segni e tracce di architettura romanica nel Novarese : rilievi e immagini",
+      "barcode": "10000000215",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-11",
+            "patron_barcode": "2050124311",
+            "id": "9906ed75-721e-432c-8f2c-5768fd0e3687",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-05-11"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "215",
+      "item_type": "no_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "216",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00216",
+      "title": "Segni e tracce di architettura romanica nel Novarese : rilievi e immagini",
+      "barcode": "10000000216",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "216",
+      "item_type": "short_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "206",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00206",
+      "title": "Il Trecento toscano : la lingua di Dante, Petrarca e Boccacio",
+      "barcode": "10000000206",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "206",
+      "item_type": "standard_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "207",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00207",
+      "title": "Il Trecento toscano : la lingua di Dante, Petrarca e Boccacio",
+      "barcode": "10000000207",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "207",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "208",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00208",
+      "title": "Il Trecento toscano : la lingua di Dante, Petrarca e Boccacio",
+      "barcode": "10000000208",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-26",
+            "patron_barcode": "2030124287",
+            "id": "27884886-8275-4475-af03-9f3b81ab3e6e",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-05-26"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "208",
+      "item_type": "standard_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "209",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00209",
+      "title": "Il Trecento toscano : la lingua di Dante, Petrarca e Boccacio",
+      "barcode": "10000000209",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-11",
+            "patron_barcode": "2030124287",
+            "id": "d5cebb94-c893-4dde-9d27-dc282fdad79e",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-06-25"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "209",
+      "item_type": "no_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "210",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00210",
+      "title": "Il Trecento toscano : la lingua di Dante, Petrarca e Boccacio",
+      "barcode": "10000000210",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "210",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "226",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00226",
+      "title": "Opera omnia",
+      "barcode": "10000000226",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-18",
+            "patron_barcode": "2030155308",
+            "id": "1349dd71-34d4-4d22-bd10-146ca23f3ab8",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-05-18"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "226",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 1,
+      "member_pid": "3"
+    },
+    {
+      "id": "227",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00227",
+      "title": "Opera omnia",
+      "barcode": "10000000227",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "227",
+      "item_type": "standard_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "228",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00228",
+      "title": "Opera omnia",
+      "barcode": "10000000228",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "228",
+      "item_type": "short_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "229",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00229",
+      "title": "Opera omnia",
+      "barcode": "10000000229",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "229",
+      "item_type": "short_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "232",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00232",
+      "title": "L'idillio barocco : e altre bagatelle",
+      "barcode": "10000000232",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "232",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "233",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00233",
+      "title": "L'idillio barocco : e altre bagatelle",
+      "barcode": "10000000233",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "233",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "234",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00234",
+      "title": "L'idillio barocco : e altre bagatelle",
+      "barcode": "10000000234",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "234",
+      "item_type": "standard_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "235",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00235",
+      "title": "L'idillio barocco : e altre bagatelle",
+      "barcode": "10000000235",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-06",
+            "patron_barcode": "2030155308",
+            "id": "333abaf3-cb73-46df-9db0-7f2a487ced2f",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-06-20"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "235",
+      "item_type": "no_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "253",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00253",
+      "title": "Se questo \u00e8 un uomo",
+      "barcode": "10000000253",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-08",
+            "patron_barcode": "2030124287",
+            "id": "8c7f99ac-8176-4c29-a315-efa943bed5a3",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-06-22"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "253",
+      "item_type": "no_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "254",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00254",
+      "title": "Se questo \u00e8 un uomo",
+      "barcode": "10000000254",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-20",
+            "patron_barcode": "2030124287",
+            "id": "61f20d04-b996-4ac2-96a8-876cbcbb12c2",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-07-04"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "254",
+      "item_type": "standard_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "255",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00255",
+      "title": "Se questo \u00e8 un uomo",
+      "barcode": "10000000255",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "255",
+      "item_type": "short_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "251",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00251",
+      "title": "Scritti e pensieri sull'arte",
+      "barcode": "10000000251",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-03-31",
+            "patron_barcode": "2030155308",
+            "id": "071242aa-64b4-4219-b589-3e08c754f55e",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-05-15"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "251",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "252",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00252",
+      "title": "Scritti e pensieri sull'arte",
+      "barcode": "10000000252",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "252",
+      "item_type": "no_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "240",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00240",
+      "title": "Discorsi e profili letterari",
+      "barcode": "10000000240",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-03",
+            "patron_barcode": "2030124287",
+            "id": "0bc6e9c0-2a46-4b69-a548-6749390c78e9",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-05-18"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "240",
+      "item_type": "short_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "241",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00241",
+      "title": "Discorsi e profili letterari",
+      "barcode": "10000000241",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "241",
+      "item_type": "standard_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "242",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00242",
+      "title": "Discorsi e profili letterari",
+      "barcode": "10000000242",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-04-10",
+            "patron_barcode": "2030124287",
+            "id": "6a201887-b324-46bb-86b1-a79a11bc838f",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-05-10"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "242",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 1,
+      "member_pid": "2"
+    },
+    {
+      "id": "243",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00243",
+      "title": "Discorsi e profili letterari",
+      "barcode": "10000000243",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "243",
+      "item_type": "short_loan",
+      "location_pid": "5",
+      "location_name": "Store Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "244",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00244",
+      "title": "Discorsi e profili letterari",
+      "barcode": "10000000244",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "244",
+      "item_type": "no_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "261",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00261",
+      "title": "Prehistoric research in the context of contemporary society",
+      "barcode": "10000000261",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-11",
+            "patron_barcode": "2030124287",
+            "id": "042f38ee-cf19-4c54-9dbf-64c45fc6b19b",
+            "pickup_member_pid": "3",
+            "pickup_member_name": "National Documentation Centre 3",
+            "end_date": "2018-06-10"
+          }
+        ],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "261",
+      "item_type": "standard_loan",
+      "location_pid": "2",
+      "location_name": "Main Base 1",
+      "requests_count": 1,
+      "member_pid": "1"
+    },
+    {
+      "id": "262",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00262",
+      "title": "Prehistoric research in the context of contemporary society",
+      "barcode": "10000000262",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre",
+      "pid": "262",
+      "item_type": "standard_loan",
+      "location_pid": "1",
+      "location_name": "Store Base 1",
+      "requests_count": 0,
+      "member_pid": "1"
+    },
+    {
+      "id": "263",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00263",
+      "title": "Prehistoric research in the context of contemporary society",
+      "barcode": "10000000263",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 3",
+      "pid": "263",
+      "item_type": "no_loan",
+      "location_pid": "6",
+      "location_name": "Main Base 3",
+      "requests_count": 0,
+      "member_pid": "3"
+    },
+    {
+      "id": "256",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00256",
+      "title": "Le rime : (Rerum vulgarium fragmenta) secondo l'autografo",
+      "barcode": "10000000256",
+      "_circulation": {
+        "holdings": [
+          {
+            "start_date": "2018-05-07",
+            "patron_barcode": "2050124311",
+            "id": "753ec1a8-cad5-40bf-8531-beb20ff00b0d",
+            "pickup_member_pid": "1",
+            "pickup_member_name": "National Documentation Centre",
+            "end_date": "2018-06-21"
+          }
+        ],
+        "status": "on_loan"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "256",
+      "item_type": "short_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "257",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00257",
+      "title": "Le rime : (Rerum vulgarium fragmenta) secondo l'autografo",
+      "barcode": "10000000257",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "257",
+      "item_type": "short_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "258",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00258",
+      "title": "Le rime : (Rerum vulgarium fragmenta) secondo l'autografo",
+      "barcode": "10000000258",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "258",
+      "item_type": "no_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "259",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00259",
+      "title": "Le rime : (Rerum vulgarium fragmenta) secondo l'autografo",
+      "barcode": "10000000259",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "259",
+      "item_type": "no_loan",
+      "location_pid": "3",
+      "location_name": "Store Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    },
+    {
+      "id": "260",
+      "$schema": "https://ils.test.rero.ch/schema/items/item-v0.0.1.json",
+      "callNumber": "00260",
+      "title": "Le rime : (Rerum vulgarium fragmenta) secondo l'autografo",
+      "barcode": "10000000260",
+      "_circulation": {
+        "holdings": [],
+        "status": "on_shelf"
+      },
+      "member_name": "National Documentation Centre 2",
+      "pid": "260",
+      "item_type": "no_loan",
+      "location_pid": "4",
+      "location_name": "Main Base 2",
+      "requests_count": 0,
+      "member_pid": "2"
+    }
+  ],
+  "logged_user": [
+    {
+      "name": "M\u00fcller, Astrid",
+      "first_name": "Astrid",
+      "last_name": "M\u00fcller",
+      "$schema": "https://ils.test.rero.ch/schema/patrons/patron-v0.0.1.json",
+      "birth_date": "1989-05-14",
+      "postal_code": "8200",
+      "street": "Spitalstrasse, 112",
+      "pid": "1",
+      "phone": "+41324993597",
+      "roles": [
+        "cataloguer",
+        "staff"
+      ],
+      "email": "librarian@rero.ch",
+      "id": "1",
+      "member_pid": "1",
+      "is_staff": true,
+      "is_patron": false,
+      "city": "Schaffhausen"
+    }
+  ]
+}

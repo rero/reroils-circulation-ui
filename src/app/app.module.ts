@@ -17,12 +17,17 @@ import { PatronsService } from './patrons.service';
 import { DocumentsService } from './documents.service';
 import { NicedatePipe } from './nicedate.pipe';
 
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { WebpackTranslateLoader } from './webpack-translate-loader';
-import {ItemUI} from './item';
+import { ItemUI } from './item';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ConfirmComponent } from './confirm/confirm.component';
+
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { RequestedItemsListComponent } from './requested-items-list/requested-items-list.component';
+import { ManageRequestsComponent } from './manage-requests/manage-requests.component';
+import { ManageCheckinCheckoutComponent } from './manage-checkin-checkout/manage-checkin-checkout.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,9 @@ import { ConfirmComponent } from './confirm/confirm.component';
     UserMessageComponent,
     NicedatePipe,
     ConfirmComponent,
+    RequestedItemsListComponent,
+    ManageRequestsComponent,
+    ManageCheckinCheckoutComponent,
     // ItemUI
   ],
   imports: [
@@ -47,7 +55,8 @@ import { ConfirmComponent } from './confirm/confirm.component';
         useClass: WebpackTranslateLoader
       }
     }),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    TabsModule.forRoot()
   ],
   providers: [
     URLPrefixService,

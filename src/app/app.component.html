@@ -1,43 +1,18 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<h4 class="pull-right" *ngIf="manager && manager.member_pid">{{manager.name}} work for member #{{manager.member_pid}}</h4>
 
-<div class="row">
-  <reroils-circulation-confirm
-    [content]="confirm_message"
-    (confirm)="confirmRemovePatron($event)"
-  ></reroils-circulation-confirm>
-  <div class="col-md-6">
-    <h3>{{ 'Checkin / Checkout' | translate }}</h3>
-    <reroils-circulation-search-bar
-      [placeholder]="placeholder"
-      [searchText]="searchText"
-      (search)="searchValueUpdated($event)"
-    ></reroils-circulation-search-bar>
-    <reroils-circulation-user-message
-      [message]="message"
-    ></reroils-circulation-user-message>
-  </div>
-  <div *ngIf="patron" class="col-md-6">
-    <reroils-circulation-patron-details
-      [patron]="patron"
-      [info]="false"
-      (clearPatron)="clearPatron($event)"
-    ></reroils-circulation-patron-details>
-  </div>
-  <div *ngIf="patron_info" class="col-md-6 text-muted">
-    <reroils-circulation-patron-details
-      [patron]="patron_info"
-      [info]="true"
-      (clearPatron)="clearPatron($event)"
-    ></reroils-circulation-patron-details>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <reroils-circulation-items-list
-      [items]="items"
-      [patron]="patron"
-      (removeItem)="removeItem($event)"
-      (applyItems)="applyItems($event)"
-    ></reroils-circulation-items-list>
-  </div>
-</div>
+<tabset *ngIf="manager && manager.member_pid">
+  <tab id="manage-checkin-checkout" heading="{{ 'Checkin / Checkout' | translate }}" class="mt-2" (select)="onTabSelect($event)">
+  <reroils-circulation-manage-checkin-checkout></reroils-circulation-manage-checkin-checkout>
+  </tab>
+  <tab id="manage-requests" heading="{{ 'Requests' | translate }}" class="mt-2" (select)="onTabSelect($event)">
+    <reroils-circulation-manage-requests
+      [visible]="manageRequestsVisible"
+      [member_pid]="manager.member_pid"
+    >
+    </reroils-circulation-manage-requests>
+  </tab>
+</tabset>
+
+<span *ngIf="!manager">loading...</span>
+
+<span *ngIf="manager && !manager.member_pid">permission denied</span>

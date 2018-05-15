@@ -16,16 +16,22 @@ export enum PatronType {
  * Patron Library
  */
 export interface Patron {
-  id: number;
-  barcode: string;
-  firstname: string;
-  lastname: string;
-  type: PatronType;
-  birthdate: Moment;
+  id: string;
+  pid: string;
+  $schema?: string;
+  barcode?: string;
+  name: string;
+  first_name: string;
+  last_name: string;
+  patron_type?: PatronType;
+  birth_date: Moment;
   email: string;
   street: string;
-  npa: string;
+  postal_code: string;
   city: string;
-  phone_number: string;
-  affiliated_library: string;
+  phone: string;
+  member_pid?: string;
+  is_staff?: boolean;
+  is_patron?: boolean;
+  roles: Array<string>;
 }

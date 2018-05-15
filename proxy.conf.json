@@ -16,5 +16,14 @@
     "pathRewrite": {
       "^/items": "http://localhost:5000/items"
     }
+  },
+  "/patrons/*": {
+    "target": "http://localhost:5000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/items": "http://localhost:5000/patrons"
+    }
   }
 }

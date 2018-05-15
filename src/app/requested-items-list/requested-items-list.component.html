@@ -1,0 +1,37 @@
+<div *ngIf="items.length">
+  <table class="table table-bordered">
+    <tr>
+      <th>{{ 'Document' | translate }}</th>
+      <th class="text-center">{{ 'Item' | translate }}</th>
+      <th class="text-center">{{ 'Location' | translate }}</th>
+      <th class="text-center">{{ 'Requested by' | translate }}</th>
+      <th class="text-center">{{ 'Pick-up Location' | translate }}</th>
+      <th class="text-center">{{ 'Request date' | translate }}</th>
+    </tr>
+    <tr [ngClass]="{
+          'success': item.done === 'validate_request'
+        }"
+        *ngFor="let item of items">
+      <td>{{ item.item.title }}</td>
+      <td class="text-right">
+        {{ item.item.barcode }}
+      </td>
+      <td class="text-right">
+        {{ item.item.location_name }}
+      </td>
+      <td class="text-right">
+        <span *ngIf="item.patron">
+          {{ item.patron.first_name }} {{item.patron.last_name }} / {{item.patron.barcode }}
+        </span>
+      </td>
+      <td class="text-right">
+        {{ item.holdings[0].pickup_member_name }}
+      </td>
+      <td class="text-right">
+        <span *ngIf="item.holdings[0].transaction_date">
+          {{ item.holdings[0].transaction_date | nicedate }}
+        </span>
+      </td>
+    </tr>
+  </table>
+</div>

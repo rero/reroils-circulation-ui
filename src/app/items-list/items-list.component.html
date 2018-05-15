@@ -1,5 +1,7 @@
 
-
+<div *ngIf="items.length === 0 && patron">
+  <span translate>No loan for the current patron.</span>
+</div>
 <div *ngIf="items.length">
   <table class="table table-bordered">
     <tr>
@@ -7,7 +9,7 @@
       <th class="text-center">{{ 'Item' | translate }}</th>
       <th class="text-center">{{ 'Location' | translate }}</th>
       <th class="text-center">{{ 'Status' | translate }}</th>
-      <th class="text-center">{{ 'Requests' | translate }}</th>
+      <th class="text-center">{{ 'Item infos' | translate }}</th>
       <th class="text-center">{{ 'Due Date' | translate }}</th>
       <th class="text-center" *ngIf="patron">{{ 'Action' | translate }}</th>
       <th class="text-center">{{ 'Action done' | translate }}</th>
@@ -22,7 +24,18 @@
       <td class="text-right">{{ item.item.barcode }}</td>
       <td class="text-right">{{ item.item.location_name }}</td>
       <td class="text-right">{{ item.item._circulation.status | translate}}</td>
-      <td class="text-right"><span *ngIf="item.requestedPosition(patron)">{{ item.requestedPosition(patron) }} / </span><span *ngIf="item.requests.length">{{ item.requests.length }}</span></td>
+      <td class="text-right">
+        <span *ngIf="item.requestedPosition(patron)">
+          <i *ngIf="warningRequests(item)" class="fa text-danger fa-exclamation-triangle">&nbsp;</i>
+          {{ item.requestedPosition(patron) }}
+        </span>
+        <span *ngIf="item.requests.length">
+          {{ 'Requests' | translate }}: {{ item.requests.length }}
+        </span>
+        <span *ngIf="item.holdings.length && item.holdings[0].renewal_count">
+          {{ 'Extension' |translate }}: {{ item.holdings[0].renewal_count }}
+        </span>
+    </td>
       <td class="text-right">
         <span [ngClass]="{'text-danger': item.loanExpired}"
               *ngIf="endDate(item)">

@@ -5,6 +5,7 @@ import { DocumentsService } from './documents.service';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { UUID } from 'angular2-uuid';
+import { PatronsService } from './patrons.service';
 
 export function _(str) {
   return str;
@@ -12,8 +13,12 @@ export function _(str) {
 
 export enum ItemStatus {
   on_shelf = _('on_shelf'),
+  // TODO: remove
   missing = _('missing'),
-  on_loan = _('on_loan')
+  on_loan = _('on_loan'),
+  in_transit = _('in_transit'),
+  at_desk = _('at_desk'),
+  out_of_circulation = _('out_of_circulation')
 }
 
 export enum ItemAction {
@@ -21,9 +26,12 @@ export enum ItemAction {
   return = _('return'),
   request = _('request'),
   lose = _('lose'),
+  receive = _('receive'),
+  renewal = _('renewal'),
   return_missing = _('return_missing'),
   cancel = _('cancel'),
   extend = _('extend'),
+  validate_request = _('validate_request'),
   no = _('no')
 }
 
@@ -36,21 +44,32 @@ export enum ItemType {
 export interface Loan {
   patron_barcode: string;
   end_date: string;
+  start_date?: string;
+  id: string;
+  pickup_member_name?: string;
+  pickup_member_pid?: string;
+  renewal_count?: number;
 }
+
 export interface Circulation {
-    status: ItemStatus;
-    holdings: Loan[];
+  status: ItemStatus;
+  holdings: Loan[];
 }
 
 export interface Item {
   id: string;
+  $schema?: string;
   pid: string;
   title: string;
-  authors: string;
+  authors?: string;
   barcode: string;
+  location_pid: string;
   location_name: string;
   callNumber: string;
+  member_pid: string;
+  member_name: string;
   item_type: ItemType;
+  requests_count: number;
   _circulation: Circulation;
 }
 
@@ -64,10 +83,19 @@ export class ItemUI {
   public done: ItemAction;
   private _lastDueDate: Moment;
   private response = new Subject();
+  private _current_patron: Patron;
+  private _current_patron_loading: boolean;
+  public _logged_user: Patron;
+
   constructor (
     public item: Item,
-    private documentsService: DocumentsService
+    private documentsService: DocumentsService,
+    private patronsService: PatronsService,
+    logged_user: Patron
   ) {
+    // TODO: logged user
+    this._current_patron = undefined;
+    this._logged_user = logged_user;
   }
 
   get onLoan() {
@@ -76,6 +104,10 @@ export class ItemUI {
 
   get onShelf() {
     return this.item._circulation.status === ItemStatus.on_shelf;
+  }
+
+  get onDesk() {
+    return this.item._circulation.status === ItemStatus.at_desk;
   }
 
   get id() {
@@ -101,7 +133,7 @@ export class ItemUI {
 
 
   expectedDueDate(patron?: Patron) {
-    if (patron && this.onShelf) {
+    if (patron && (this.onShelf || this.onDesk)) {
       return moment().add(this.loanDuration, 'days');
     }
     return null;
@@ -147,16 +179,16 @@ export class ItemUI {
   }
 
   canLoan(patron?: Patron) {
-    if (!this.onShelf) {
-      return false;
-    }
-    if (this.hasRequests && !this.isFirstInRequests(patron)) {
-      return false;
-    }
     if (this.item.item_type === ItemType.no_loan) {
       return false;
     }
-    return true;
+    if (this.onShelf && !this.hasRequests) {
+      return true;
+    }
+    if (this.onDesk && this.isFirstInRequests(patron)) {
+      return true;
+    }
+    return false;
   }
 
   isFirstInRequests(patron?: Patron) {
@@ -197,6 +229,11 @@ export class ItemUI {
         this.doReturnMissing();
         break;
       }
+
+      case ItemAction.renewal: {
+          this.doRenewal();
+          break;
+      }
       // case ItemAction.lose: {
       //   response = this.doLose();
       //   break;
@@ -209,8 +246,13 @@ export class ItemUI {
         break;
       }
     }
+    this._current_patron = undefined;
     this.setAction(this.getAction(patron));
     return this.response;
+  }
+
+  get status() {
+    return this.item._circulation.status;
   }
 
   public createLoan(patron) {
@@ -222,10 +264,14 @@ export class ItemUI {
     };
   }
 
+  /*-------------------------------------------------------------
+  --------------------- Actions ---------------------------------
+  --------------------------------------------------------------- */
   doLoan(patron) {
-    if (!this.requestedBy(patron)) {
-      this.item._circulation.holdings.unshift(this.createLoan(patron));
+    if (this.requestedBy(patron)) {
+      this.holdings.shift();
     }
+    this.holdings.unshift(this.createLoan(patron));
     this.documentsService.loanItem(this, patron).subscribe(item => {
       this.done = ItemAction.loan;
       this.item._circulation.status = ItemStatus.on_loan;
@@ -236,9 +282,24 @@ export class ItemUI {
   }
 
   doReturn() {
-    const item = this.item._circulation.holdings.shift();
+    // return the item on his own member
+    const request = this.requests[0];
+
+    if (!this.hasRequests) {
+      if (this.item.member_pid === this._logged_user.member_pid) {
+        this.item._circulation.status = ItemStatus.on_shelf;
+      } else {
+        this.item._circulation.status = ItemStatus.in_transit;
+      }
+    } else {
+      if (request.pickup_member_pid === this._logged_user.member_pid) {
+        this.item._circulation.status = ItemStatus.at_desk;
+      } else {
+        this.item._circulation.status = ItemStatus.in_transit;
+      }
+    }
+    const item = this.holdings.shift();
     const end_date = moment(item.end_date);
-    this.item._circulation.status = ItemStatus.on_shelf;
     this.documentsService.returnItem(this)
                           .subscribe(() => {
                              this.done = ItemAction.return;
@@ -246,6 +307,39 @@ export class ItemUI {
                              this.response.next({status: 'ok'});
                              this.response.complete();
                           });
+  }
+
+  doValidateRequest() {
+    if (this.hasRequests) {
+      const request = this.requests[0];
+      if (request.pickup_member_pid !== this.item.member_pid) {
+        this.item._circulation.status = ItemStatus.in_transit;
+      } else {
+        this.item._circulation.status = ItemStatus.at_desk;
+      }
+      this.documentsService.validateRequestedItem(this).subscribe(item => {
+        this.done = ItemAction.validate_request;
+        this.response.next({status: 'ok'});
+        this.response.complete();
+      });
+    }
+  }
+
+  doReceive() {
+    const request = this.requests[0];
+    if (this.hasRequests && (request.pickup_member_pid === this._logged_user.member_pid)) {
+        this.item._circulation.status = ItemStatus.at_desk;
+    } else {
+      if (!this.hasRequests && (this.item.member_pid === this._logged_user.member_pid)) {
+        this.item._circulation.status = ItemStatus.on_shelf;
+      }
+    }
+
+    this.documentsService.receiveItem(this).subscribe(item => {
+      this.done = ItemAction.receive;
+      this.response.next({status: 'ok'});
+      this.response.complete();
+    });
   }
 
   doReturnMissing() {
@@ -257,36 +351,22 @@ export class ItemUI {
     });
   }
 
-  doRequest(patron) {
-    this.holdings.push(this.createLoan(patron));
-    this.documentsService.updateItem(this.item).subscribe(item => {
-      this.done = ItemAction.request;
-      this.response.next({status: 'ok'});
-      this.response.complete();
-    });
-  }
-
-  doLose() {
-    if (this.onLoan) {
-      this.item._circulation.holdings.shift();
+  doRenewal() {
+    const holding = this.holdings[0];
+    holding.start_date = moment().format('YYYY-MM-DD');
+    holding.end_date = moment()
+                          .add(this.renewalDurationDays(), 'days')
+                          .format('YYYY-MM-DD');
+    if (holding.renewal_count === undefined) {
+      holding.renewal_count = 1;
+    } else {
+      holding.renewal_count++;
     }
-    this.item._circulation.status = ItemStatus.missing;
-    this.documentsService.updateItem(this.item).subscribe(item => {
-      this.done = ItemAction.lose;
+    this.documentsService.renewalItem(this).subscribe(item => {
+      this.done = ItemAction.renewal;
       this.response.next({status: 'ok'});
       this.response.complete();
-    });
-  }
-
-  doCancel(patron) {
-    const pos = this.requestedPosition(patron);
-    if (pos > 0) {
-      this.item._circulation.holdings.splice(pos - 1, 1);
-    }
-    this.documentsService.updateItem(this.item).subscribe(item => {
-      this.done = ItemAction.cancel;
-      this.response.next({status: 'ok'});
-      this.response.complete();
+      this.currentAction = ItemAction.no;
     });
   }
 
@@ -330,6 +410,25 @@ export class ItemUI {
     return this.holdings.length > 0;
   }
 
+  get patron() {
+    if (this._current_patron === undefined) {
+      if (this.holdings.length && this.holdings[0].patron_barcode && !this._current_patron_loading) {
+        const barcode = this.holdings[0].patron_barcode;
+        this._current_patron_loading = true;
+        this.patronsService.getPatron(barcode).subscribe(patrons => {
+          switch (patrons.length) {
+            case 1: {
+              this._current_patron = patrons[0];
+              this._current_patron_loading = false;
+              break;
+            }
+          }
+        });
+      }
+    }
+    return this._current_patron;
+  }
+
   requestedPosition(patron) {
     if (!patron) {
       return 0;
@@ -351,11 +450,19 @@ export class ItemUI {
       if (this.onShelf) {
         actions = [ItemAction.loan, ItemAction.no];
       }
+      if (this.onDesk) {
+        actions = [ItemAction.loan, ItemAction.no];
+      }
       if (this.onLoan) {
-        actions = [ItemAction.no, ItemAction.return];
+        actions = [ItemAction.no, ItemAction.return, ItemAction.renewal];
       }
     }
     return actions;
   }
 
+  renewalDurationDays() {
+    return (this.item.item_type === ItemType.standard_loan) ?
+                      this.standardLoanDuration :
+                      this.shortLoanDuration;
+  }
 }
