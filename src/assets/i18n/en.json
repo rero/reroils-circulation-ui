@@ -41,7 +41,7 @@
   "at_desk": "at desk",
   "Please enter an item barcode.": "Please enter an item barcode.",
   "standard_loan": "standard loan",
-  "on_loan": "on_loan",
+  "on_loan": "on loan",
   "The returned item has requests!": "The returned item has pending requests!",
   "Request date": "Request date",
   "on_shelf": "on shelf",

@@ -3,7 +3,7 @@
   <span translate>No loan for the current patron.</span>
 </div>
 <div *ngIf="items.length">
-  <table class="table table-bordered">
+  <table class="table table-bordered table-sm">
     <tr>
       <th>{{ 'Document' | translate }}</th>
       <th class="text-center">{{ 'Item' | translate }}</th>
@@ -16,8 +16,8 @@
     </tr>
     <tr *ngFor="let item of items"
         [ngClass]="{
-          'success': item.isActionLoan(patron),
-          'warning': item.isActionReturn(patron)
+          'table-success': item.isActionLoan(patron),
+          'table-warning': item.isActionReturn(patron)
         }"
     >
       <td>{{ item.item.title }}</td>
@@ -43,9 +43,12 @@
         </span>
       </td>
       <td class="text-right" *ngIf="patron">
-        <div class="btn-group" *ngIf="item.getActions(patron).length">
+
+
+        <div class="dropdown dropdown-sm" *ngIf="item.getActions(patron).length">
           <button type="button"
                   class="btn btn-sm dropdown-toggle"
+                  id="dropdownMenuButton"
                   [ngClass]="{'disabled': (item.getActions(patron).length < 2)}"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -53,9 +56,9 @@
           >
             {{ item.getAction(patron) | translate }} <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu">
-            <li (click)="item.setAction(action)" *ngFor="let action of item.getActions(patron)"><a>{{ action | translate }}</a></li>
-          </ul>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="dropdown-item btn-sm" (click)="item.setAction(action)" *ngFor="let action of item.getActions(patron)">{{ action | translate }}</button>
+          </div>
         </div>
     </td>
     <td class="text-right">
@@ -66,7 +69,7 @@
   <button *ngIf="patron"
           [disabled]="!hasPendingActions()"
           type="button"
-          class="btn btn-success pull-right"
+          class="btn btn-success float-right"
           (click)="apply(items)">
       {{ 'Apply' | translate }}
   </button>

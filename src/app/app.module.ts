@@ -1,7 +1,7 @@
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemCirculationService } from './in-memory-circulation.service';
-
+import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -28,6 +28,14 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { RequestedItemsListComponent } from './requested-items-list/requested-items-list.component';
 import { ManageRequestsComponent } from './manage-requests/manage-requests.component';
 import { ManageCheckinCheckoutComponent } from './manage-checkin-checkout/manage-checkin-checkout.component';
+
+
+const routes: Routes = [
+  {path: '', redirectTo: 'checkinout', pathMatch: 'full'},
+  {path: 'checkinout', component: ManageCheckinCheckoutComponent },
+  {path: 'checkinout/patron/:patron', component: ManageCheckinCheckoutComponent },
+  {path: 'requests', component: ManageRequestsComponent }
+]
 
 @NgModule({
   declarations: [
@@ -56,7 +64,8 @@ import { ManageCheckinCheckoutComponent } from './manage-checkin-checkout/manage
       }
     }),
     ModalModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    RouterModule.forRoot(routes)
   ],
   providers: [
     URLPrefixService,

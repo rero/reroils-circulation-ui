@@ -8,6 +8,7 @@ import { Moment } from 'moment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 import {TranslateService} from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
 
 export function _(str: string) {
   return str;
@@ -32,7 +33,9 @@ export class ManageCheckinCheckoutComponent {
   constructor(private patronsService: PatronsService,
               private documentsService: DocumentsService,
               @Inject(LOCALE_ID) locale,
-              translate: TranslateService) {
+              translate: TranslateService,
+              private route: ActivatedRoute) {
+    route.params.subscribe(params => this.getPatron(params.patron));
     this.placeholder = _('Please enter a patron card number or an item barcode.');
     this.searchText = '';
     this.patronsService = patronsService;

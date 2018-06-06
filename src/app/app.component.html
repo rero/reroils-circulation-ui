@@ -1,18 +1,40 @@
-<h4 class="pull-right" *ngIf="manager && manager.member_pid">{{manager.name}} work for member #{{manager.member_pid}}</h4>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/checkinout']">Checkin/Checkout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/requests']">Requests</a>
+            </li>
+          </ul>
+        </nav>
 
-<tabset *ngIf="manager && manager.member_pid">
-  <tab id="manage-checkin-checkout" heading="{{ 'Checkin / Checkout' | translate }}" class="mt-2" (select)="onTabSelect($event)">
-  <reroils-circulation-manage-checkin-checkout></reroils-circulation-manage-checkin-checkout>
-  </tab>
-  <tab id="manage-requests" heading="{{ 'Requests' | translate }}" class="mt-2" (select)="onTabSelect($event)">
-    <reroils-circulation-manage-requests
-      [visible]="manageRequestsVisible"
-      [member_pid]="manager.member_pid"
-    >
-    </reroils-circulation-manage-requests>
-  </tab>
-</tabset>
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+          <!-- <h1>Librarian Admin Pannel</h1> -->
+      <div *ngIf="manager && manager.member_pid" id="content">
+            <router-outlet></router-outlet>
+          </div>
 
-<span *ngIf="!manager">loading...</span>
+<!--           <tabset *ngIf="manager && manager.member_pid">
+            <tab id="manage-checkin-checkout" heading="{{ 'Checkin / Checkout' | translate }}" class="mt-2" (select)="onTabSelect($event)">
+            <reroils-circulation-manage-checkin-checkout></reroils-circulation-manage-checkin-checkout>
+            </tab>
+            <tab id="manage-requests" heading="{{ 'Requests' | translate }}" class="mt-2" (select)="onTabSelect($event)">
+              <reroils-circulation-manage-requests
+                [visible]="manageRequestsVisible"
+                [member_pid]="manager.member_pid"
+              >
+              </reroils-circulation-manage-requests>
+            </tab>
+          </tabset> -->
 
-<span *ngIf="manager && !manager.member_pid">permission denied</span>
+        <span *ngIf="!manager">loading...</span>
+
+        <span *ngIf="manager && !manager.member_pid">permission denied</span>
+
+        </main>
+      </div>
+    </div>
+

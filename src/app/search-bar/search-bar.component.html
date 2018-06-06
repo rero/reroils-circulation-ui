@@ -1,17 +1,15 @@
-
-<div class="input-group" id="adv-search">
-    <input #searchinput
-           autofocus
-           type="text"
-           class="form-control"
-           placeholder="{{ placeholder | translate }}"
-           [value]="searchText"
-           (keyup.enter)="doSearch(searchinput.value)"
-    />
-    <div class="input-group-btn">
-        <div class="btn-group" role="group">
-            <button type="button" (click)="doSearch(searchinput.value)" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-        </div>
-    </div>
+<div class="input-group">
+  <input #searchinput
+         autofocus
+         type="text"
+         class="form-control"
+         placeholder="{{ placeholder | translate }}"
+         [value]="searchText"
+         (keyup.enter)="doSearch(searchinput.value)"
+  />
+  <div class="input-group-append">
+    <button (click)="doSearch(searchinput.value)" class="btn btn-outline-secondary" type="button">
+        <i class="fa fa-search"></i>
+    </button>
+  </div>
 </div>
-

@@ -15,6 +15,7 @@ export class SearchBarComponent {
   @Input() searchText: string;
 
   doSearch(searchText: string) {
+    console.log(searchText);
     this.search.emit(searchText);
   }
 }

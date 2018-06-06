@@ -1,5 +1,5 @@
 <div *ngIf="items.length">
-  <table class="table table-bordered">
+  <table class="table table-bordered table-sm">
     <tr>
       <th>{{ 'Document' | translate }}</th>
       <th class="text-center">{{ 'Item' | translate }}</th>
@@ -9,7 +9,7 @@
       <th class="text-center">{{ 'Request date' | translate }}</th>
     </tr>
     <tr [ngClass]="{
-          'success': item.done === 'validate_request'
+          'table-success': item.done === 'validate_request'
         }"
         *ngFor="let item of items">
       <td>{{ item.item.title }}</td>
@@ -21,7 +21,7 @@
       </td>
       <td class="text-right">
         <span *ngIf="item.patron">
-          {{ item.patron.first_name }} {{item.patron.last_name }} / {{item.patron.barcode }}
+          {{ item.patron.first_name }} {{item.patron.last_name }} / <a routerLink='/checkinout/patron/{{item.patron.barcode }}'>{{item.patron.barcode }}</a>
         </span>
       </td>
       <td class="text-right">

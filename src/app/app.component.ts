@@ -6,6 +6,7 @@ import { Patron } from './patron';
 /**
  * Main Component
  */
+
 @Component({
   selector: 'reroils-circulation-root',
   templateUrl: './app.component.html',
