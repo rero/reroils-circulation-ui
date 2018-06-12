@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DocumentsService } from '../documents.service';
 import { ItemUI, ItemStatus } from '../item';
+  import { PatronsService } from '../patrons.service';
 
 export function _(str: string) {
   return str;
@@ -15,25 +16,17 @@ export class ManageRequestsComponent {
   public placeholder: string;
   public searchText: string;
   public items: ItemUI[];
-  @Input()
   private member_pid: string;
   message: string;
 
-  constructor (private documentsService: DocumentsService) {
+  constructor (private documentsService: DocumentsService, private patronsService: PatronsService) {
     this.items = new Array<ItemUI>();
     this.searchText = '';
     this.placeholder = _('Please enter an item barcode.');
-  }
-
-  @Input() set visible(value: boolean) {
-    if (value) {
-      this.searchText = '';
-      this.message = '';
+    patronsService.logged_user.subscribe( user => {
+      this.member_pid = user.member_pid;
       this.getRequestedItems();
-    } else {
-      this.searchText = undefined;
-      this.items = new Array<ItemUI>();
-    }
+    });
   }
 
   getRequestedItems() {

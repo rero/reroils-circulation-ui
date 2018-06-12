@@ -1,18 +1,21 @@
-<h4 class="pull-right" *ngIf="manager && manager.member_pid">{{manager.name}} work for member #{{manager.member_pid}}</h4>
+<div class="row" *ngIf="manager && manager.member_pid">
+  <div class="col-md-2">
+    <span><i class="glyphicon glyphicon-user"></i> {{manager.name}}</span>
+    <hr>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/checkinout']">Checkin/Checkout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/requests']">Requests</a>
+      </li>
+    </ul>
+  </div>
 
-<tabset *ngIf="manager && manager.member_pid">
-  <tab id="manage-checkin-checkout" heading="{{ 'Checkin / Checkout' | translate }}" class="mt-2" (select)="onTabSelect($event)">
-  <reroils-circulation-manage-checkin-checkout></reroils-circulation-manage-checkin-checkout>
-  </tab>
-  <tab id="manage-requests" heading="{{ 'Requests' | translate }}" class="mt-2" (select)="onTabSelect($event)">
-    <reroils-circulation-manage-requests
-      [visible]="manageRequestsVisible"
-      [member_pid]="manager.member_pid"
-    >
-    </reroils-circulation-manage-requests>
-  </tab>
-</tabset>
-
+  <div class="col-md-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 <span *ngIf="!manager">loading...</span>
 
 <span *ngIf="manager && !manager.member_pid">permission denied</span>

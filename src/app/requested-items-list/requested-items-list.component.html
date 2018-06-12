@@ -21,7 +21,10 @@
       </td>
       <td class="text-right">
         <span *ngIf="item.patron">
-          {{ item.patron.first_name }} {{item.patron.last_name }} / {{item.patron.barcode }}
+          {{ item.patron.first_name }} {{item.patron.last_name }} /
+          <a [routerLink]="['/checkinout']" [queryParams]="{ patron: item.patron.barcode }">
+            {{item.patron.barcode }}
+          </a>
         </span>
       </td>
       <td class="text-right">

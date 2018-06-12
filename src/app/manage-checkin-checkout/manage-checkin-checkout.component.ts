@@ -8,7 +8,8 @@ import { Moment } from 'moment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
 import {TranslateService} from '@ngx-translate/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import 'rxjs/add/observable/of';
 export function _(str: string) {
   return str;
 }
@@ -29,10 +30,15 @@ export class ManageCheckinCheckoutComponent {
   public requestedItems: ItemUI[];
   confirm_message: string;
 
+  private confirmed: Observable<boolean>;
   constructor(private patronsService: PatronsService,
               private documentsService: DocumentsService,
               @Inject(LOCALE_ID) locale,
-              translate: TranslateService) {
+              translate: TranslateService,
+              private route: ActivatedRoute,
+              private router: Router) {
+    // console.log(route.queryParams);
+    route.queryParamMap.subscribe(params => this.getPatron(params.get('patron')));
     this.placeholder = _('Please enter a patron card number or an item barcode.');
     this.searchText = '';
     this.patronsService = patronsService;
@@ -44,6 +50,16 @@ export class ManageCheckinCheckoutComponent {
     translate.setDefaultLang('en');
     translate.use(locale);
     this.confirm_message = undefined;
+    this.confirmed = Observable.of(false);
+    // this.confirmed.complete();
+  }
+
+  canDeactivate(): Observable<boolean> {
+    if (!this.hasPendingActions()) {
+      return Observable.of(true);
+    }
+    this.confirm_message = _('sure to abort pending changes?');
+    return this.confirmed;
   }
 
   searchValueUpdated(search_text: string) {
@@ -206,6 +222,9 @@ export class ManageCheckinCheckoutComponent {
             this.message = '';
             this.clearItems();
             this.getPatronItems();
+            this.router.navigate([], { queryParams: {
+              patron: this.patron.barcode
+            }});
             break;
           }
           case 0: {
@@ -237,6 +256,7 @@ export class ManageCheckinCheckoutComponent {
     this.message = '';
     this.items = new Array<ItemUI>();
     this.requestedItems = new Array<ItemUI>();
+    this.router.navigate([], { queryParams: {}});
   }
 
   removeItem(item: ItemUI) {
@@ -246,6 +266,9 @@ export class ManageCheckinCheckoutComponent {
   confirmRemovePatron(ok: boolean) {
     if (ok === true) {
       this.doClearPatron();
+      this.confirmed = Observable.of(true);
+    } else {
+      this.confirmed = Observable.of(false);
     }
     this.confirm_message = undefined;
   }

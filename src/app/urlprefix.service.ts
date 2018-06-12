@@ -24,6 +24,7 @@ export class URLPrefixService {
     if (environment.production) {
       this.patronsURL = '/api/patrons/?q=barcode:';
       this.documentsURL = '/api/documents/?q=itemslist.barcode:';
+      // tslint:disable-next-line
       this.requestedItemsURL = '/api/documents/?size=100&q=itemslist.requests_count:%5B1%20TO%20*%20%5D%20AND%20item_status:on_shelf%20AND%20itemslist.member_pid:';
       this.patronItemsURL = '/api/documents/?&size=100&q=itemslist._circulation.holdings.patron_barcode:';
       this.loggedUserURL = '/patrons/logged_user';

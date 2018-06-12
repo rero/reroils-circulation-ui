@@ -4,6 +4,8 @@ import { WebpackTranslateLoader } from '../webpack-translate-loader';
 import { NicedatePipe } from '../nicedate.pipe';
 
 import { RequestedItemsListComponent } from './requested-items-list.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppComponent } from '../app.component';
 
 describe('RequestedItemsListComponent', () => {
   let component: RequestedItemsListComponent;
@@ -13,6 +15,7 @@ describe('RequestedItemsListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ RequestedItemsListComponent, NicedatePipe ],
       imports: [
+        RouterTestingModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,

@@ -3,49 +3,52 @@
 (confirm)="confirmRemovePatron($event)"
 ></reroils-circulation-confirm>
 
-<div class="row">
-  <div class="col-md-6">
-  <h2>{{ 'Checkin / Checkout' | translate }}</h2>
-    <reroils-circulation-search-bar
-    [placeholder]="placeholder"
-    [searchText]="searchText"
-    (search)="searchValueUpdated($event)"
-    ></reroils-circulation-search-bar>
-    <reroils-circulation-user-message
-    [message]="message"
-    ></reroils-circulation-user-message>
+<section class="">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>{{ 'Checkin / Checkout' | translate }}</h2>
+      <reroils-circulation-search-bar
+      [placeholder]="placeholder"
+      [searchText]="searchText"
+      (search)="searchValueUpdated($event)"
+      ></reroils-circulation-search-bar>
+      <reroils-circulation-user-message
+      [message]="message"
+      ></reroils-circulation-user-message>
+    </div>
+    <div *ngIf="patron" class="col-md-6">
+      <reroils-circulation-patron-details
+      [patron]="patron"
+      [info]="false"
+      (clearPatron)="clearPatron($event)"
+      ></reroils-circulation-patron-details>
+    </div>
+    <div *ngIf="patron_info" class="col-md-6 text-muted">
+      <reroils-circulation-patron-details
+      [patron]="patron_info"
+      [info]="true"
+      (clearPatron)="clearPatron($event)"
+      ></reroils-circulation-patron-details>
+    </div>
   </div>
-  <div *ngIf="patron" class="col-md-6">
-    <reroils-circulation-patron-details
-    [patron]="patron"
-    [info]="false"
-    (clearPatron)="clearPatron($event)"
-    ></reroils-circulation-patron-details>
+  <div class="row">
+    <div class="col-md-12">
+      <reroils-circulation-items-list
+      [items]="items"
+      [patron]="patron"
+      (removeItem)="removeItem($event)"
+      (applyItems)="applyItems($event)"
+      ></reroils-circulation-items-list>
+    </div>
   </div>
-  <div *ngIf="patron_info" class="col-md-6 text-muted">
-    <reroils-circulation-patron-details
-    [patron]="patron_info"
-    [info]="true"
-    (clearPatron)="clearPatron($event)"
-    ></reroils-circulation-patron-details>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <reroils-circulation-items-list
-    [items]="items"
-    [patron]="patron"
-    (removeItem)="removeItem($event)"
-    (applyItems)="applyItems($event)"
-    ></reroils-circulation-items-list>
-  </div>
-</div>
 
-<div *ngIf="requestedItems.length" class="row">
-  <div class="col-md-12">
-  <h3>Requested Items</h3>
-    <reroils-circulation-requested-items-list
-    [items]="requestedItems"
-    ></reroils-circulation-requested-items-list>
+  <div *ngIf="requestedItems.length" class="row">
+    <div class="col-md-12">
+      <h3>Requested Items</h3>
+      <reroils-circulation-requested-items-list
+      [items]="requestedItems"
+      ></reroils-circulation-requested-items-list>
+    </div>
   </div>
-</div>
+</section>
+
