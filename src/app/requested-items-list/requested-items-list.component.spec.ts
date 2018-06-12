@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { WebpackTranslateLoader } from '../webpack-translate-loader';
 import { NicedatePipe } from '../nicedate.pipe';
+import { DataTablesModule } from 'angular-datatables';
 
 import { RequestedItemsListComponent } from './requested-items-list.component';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -16,6 +17,7 @@ describe('RequestedItemsListComponent', () => {
       declarations: [ RequestedItemsListComponent, NicedatePipe ],
       imports: [
         RouterTestingModule,
+        DataTablesModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,

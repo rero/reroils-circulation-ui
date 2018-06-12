@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { UUID } from 'angular2-uuid';
 import { PatronsService } from './patrons.service';
+import 'rxjs/add/observable/of';
 
 export function _(str) {
   return str;
@@ -86,7 +87,7 @@ export class ItemUI {
   private _current_patron: Patron;
   private _current_patron_loading: boolean;
   public _logged_user: Patron;
-
+  public patronLoading: Observable<boolean>;
   constructor (
     public item: Item,
     private documentsService: DocumentsService,
@@ -96,6 +97,7 @@ export class ItemUI {
     // TODO: logged user
     this._current_patron = undefined;
     this._logged_user = logged_user;
+    this.patronLoading = Observable.of(false);
   }
 
   get onLoan() {
@@ -410,23 +412,27 @@ export class ItemUI {
     return this.holdings.length > 0;
   }
 
-  get patron() {
+  get patron(): Observable<Patron> {
     if (this._current_patron === undefined) {
       if (this.holdings.length && this.holdings[0].patron_barcode && !this._current_patron_loading) {
         const barcode = this.holdings[0].patron_barcode;
         this._current_patron_loading = true;
-        this.patronsService.getPatron(barcode).subscribe(patrons => {
+        this.patronLoading = Observable.of(true);
+        const obs = this.patronsService.getPatron(barcode);
+        obs.subscribe(patrons => {
           switch (patrons.length) {
             case 1: {
               this._current_patron = patrons[0];
               this._current_patron_loading = false;
+              this.patronLoading = Observable.of(false);
               break;
             }
           }
         });
+        return obs.map(patrons => <Patron>patrons[0]);
       }
     }
-    return this._current_patron;
+    return Observable.of(this._current_patron);
   }
 
   requestedPosition(patron) {

@@ -37,7 +37,6 @@ export class ManageCheckinCheckoutComponent {
               translate: TranslateService,
               private route: ActivatedRoute,
               private router: Router) {
-    // console.log(route.queryParams);
     route.queryParamMap.subscribe(params => this.getPatron(params.get('patron')));
     this.placeholder = _('Please enter a patron card number or an item barcode.');
     this.searchText = '';
@@ -51,7 +50,6 @@ export class ManageCheckinCheckoutComponent {
     translate.use(locale);
     this.confirm_message = undefined;
     this.confirmed = Observable.of(false);
-    // this.confirmed.complete();
   }
 
   canDeactivate(): Observable<boolean> {

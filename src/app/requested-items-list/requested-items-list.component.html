@@ -1,5 +1,6 @@
-<div *ngIf="items.length">
-  <table class="table table-bordered">
+<div *ngIf="_items.length">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered row-border hover">
+<thead>
     <tr>
       <th>{{ 'Document' | translate }}</th>
       <th class="text-center">{{ 'Item' | translate }}</th>
@@ -8,22 +9,26 @@
       <th class="text-center">{{ 'Pick-up Location' | translate }}</th>
       <th class="text-center">{{ 'Request date' | translate }}</th>
     </tr>
+  </thead>
+  <tbody>
     <tr [ngClass]="{
           'success': item.done === 'validate_request'
         }"
-        *ngFor="let item of items">
+        *ngFor="let item of _items">
       <td>{{ item.item.title }}</td>
       <td class="text-right">
         {{ item.item.barcode }}
       </td>
       <td class="text-right">
-        {{ item.item.location_name }}
+        {{ item.item.location_name }} /
+        {{ item.item.callNumber }}
       </td>
       <td class="text-right">
-        <span *ngIf="item.patron">
-          {{ item.patron.first_name }} {{item.patron.last_name }} /
-          <a [routerLink]="['/checkinout']" [queryParams]="{ patron: item.patron.barcode }">
-            {{item.patron.barcode }}
+        <span *ngIf="item.patron | async as patron; else loading">
+          <a [routerLink]="['/checkinout']"
+             [queryParams]="{ patron: patron.barcode }"
+          >
+            {{ patron.first_name }} {{ patron.last_name }}
           </a>
         </span>
       </td>
@@ -36,5 +41,9 @@
         </span>
       </td>
     </tr>
+  </tbody>
   </table>
 </div>
+<ng-template #loading>
+  <i class="fa fa-spinner fa-spin fa-fw"></i>
+</ng-template>

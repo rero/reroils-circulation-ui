@@ -28,6 +28,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { RequestedItemsListComponent } from './requested-items-list/requested-items-list.component';
 import { ManageRequestsComponent } from './manage-requests/manage-requests.component';
 import { ManageCheckinCheckoutComponent } from './manage-checkin-checkout/manage-checkin-checkout.component';
+import { DataTablesModule } from 'angular-datatables';
 import { ModificationGuard } from './modification.guard';
 
 const routes: Routes = [
@@ -56,7 +57,7 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(InMemCirculationService,
-                                                                         { delay: 500, dataEncapsulation: false,
+                                                                         { delay: 1000, dataEncapsulation: false,
                                                                            put204: false }),
     TranslateModule.forRoot({
       loader: {
@@ -65,7 +66,8 @@ const routes: Routes = [
       }
     }),
     ModalModule.forRoot(),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    DataTablesModule
   ],
   providers: [
     URLPrefixService,
