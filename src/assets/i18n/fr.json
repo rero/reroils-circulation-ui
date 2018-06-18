@@ -6,7 +6,7 @@
   "No loan for the current patron.": "Pas de prêt pour ce lecteur.",
   "Apply": "Appliquer",
   "Requests": "Demande(s)",
-  "no_loan": "consultation sur place",
+  "on_site_consultation": "consultation sur place",
   "Item infos": "Informations",
   "an error occurs on the server": "une erreur est survenue sur le serveur",
   "Checkin / Checkout": "Retour / Prêt",

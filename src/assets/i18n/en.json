@@ -6,7 +6,7 @@
   "No loan for the current patron.": "No loan for the current patron.",
   "Apply": "Apply",
   "Requests": "Request(s)",
-  "no_loan": "on-site consultation",
+  "on_site_consultation": "on-site consultation",
   "Item infos": "Item infos",
   "an error occurs on the server": "an error occurs on the server",
   "Checkin / Checkout": "Checkin / Checkout",

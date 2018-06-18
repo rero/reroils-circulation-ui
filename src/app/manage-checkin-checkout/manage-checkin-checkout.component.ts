@@ -97,7 +97,7 @@ export class ManageCheckinCheckoutComponent {
                   this.message = _('item cannot be loaned: it is already loaned');
                   break;
                 }
-                if (item.item.item_type === ItemType.no_loan) {
+                if (item.item.item_type === ItemType.on_site_consultation) {
                   this.message = _('item cannot be loaned: due to the item type');
                   break;
                 }

@@ -39,7 +39,7 @@ export enum ItemAction {
 export enum ItemType {
   standard_loan = _('standard_loan'),
   short_loan = _('short_loan'),
-  no_loan = _('no_loan')
+  on_site_consultation = _('on_site_consultation')
 }
 
 export interface Loan {
@@ -181,7 +181,7 @@ export class ItemUI {
   }
 
   canLoan(patron?: Patron) {
-    if (this.item.item_type === ItemType.no_loan) {
+    if (this.item.item_type === ItemType.on_site_consultation) {
       return false;
     }
     if (this.onShelf && !this.hasRequests) {
