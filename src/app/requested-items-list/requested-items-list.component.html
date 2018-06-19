@@ -36,8 +36,8 @@
         {{ item.holdings[0].pickup_member_name }}
       </td>
       <td class="text-right">
-        <span *ngIf="item.holdings[0].transaction_date">
-          {{ item.holdings[0].transaction_date | nicedate }}
+        <span *ngIf="item.holdings[0].request_datetime">
+          {{ item.holdings[0].request_datetime | date :'medium' }}
         </span>
       </td>
     </tr>

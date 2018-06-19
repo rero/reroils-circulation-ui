@@ -3,7 +3,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PatronDetailsComponent } from './patron-details.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { WebpackTranslateLoader } from '../webpack-translate-loader';
-import { NicedatePipe } from '../nicedate.pipe';
 
 describe('PatronDetailsComponent', () => {
   let component: PatronDetailsComponent;
@@ -12,8 +11,7 @@ describe('PatronDetailsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        PatronDetailsComponent,
-        NicedatePipe
+        PatronDetailsComponent
       ],
       imports: [
         TranslateModule.forRoot({

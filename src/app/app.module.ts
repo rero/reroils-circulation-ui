@@ -16,7 +16,6 @@ import { URLPrefixService } from './urlprefix.service';
 import { UserMessageComponent } from './user-message/user-message.component';
 import { PatronsService } from './patrons.service';
 import { DocumentsService } from './documents.service';
-import { NicedatePipe } from './nicedate.pipe';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { WebpackTranslateLoader } from './webpack-translate-loader';
@@ -46,7 +45,6 @@ const routes: Routes = [
     PatronDetailsComponent,
     ItemsListComponent,
     UserMessageComponent,
-    NicedatePipe,
     ConfirmComponent,
     RequestedItemsListComponent,
     ManageRequestsComponent,

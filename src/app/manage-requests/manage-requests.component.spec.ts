@@ -3,7 +3,6 @@
 // import { WebpackTranslateLoader } from '../webpack-translate-loader';
 // import { SearchBarComponent } from '../search-bar/search-bar.component';
 // import { RequestedItemsListComponent } from '../requested-items-list/requested-items-list.component';
-// import { NicedatePipe } from '../nicedate.pipe';
 // import { DocumentsService } from '../documents.service';
 // import { HttpClientModule, HttpClient } from '@angular/common/http';
 // import { URLPrefixService } from '../urlprefix.service';
@@ -17,7 +16,7 @@
 
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ ManageRequestsComponent, SearchBarComponent, RequestedItemsListComponent, NicedatePipe ],
+//       declarations: [ ManageRequestsComponent, SearchBarComponent, RequestedItemsListComponent ],
 //       imports: [
 //         HttpClientModule,
 //         TranslateModule.forRoot({

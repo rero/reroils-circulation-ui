@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-md-6">
           <div>
-            <span *ngIf="patron.birth_date">{{ patron.birth_date | nicedate }}</span>
+            <span *ngIf="patron.birth_date">{{ patron.birth_date | date :'shortDate' }}</span>
           </div>
           <div>
             <span *ngIf="patron.city">{{ patron.city}}</span>
