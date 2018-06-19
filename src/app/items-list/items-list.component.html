@@ -20,8 +20,8 @@
           'warning': item.isActionReturn(patron)
         }"
     >
-      <td>{{ item.item.title }}</td>
-      <td class="text-right">{{ item.item.barcode }}</td>
+      <td><a href="/documents/{{ item.item.document_pid }}" target="_blank">{{ item.item.title }}</a></td>
+      <td class="text-right"><a href="/items/{{ item.item.pid }}" target="_blank">{{ item.item.barcode }}</a></td>
       <td class="text-right">{{ item.item.location_name }}</td>
       <td class="text-right">{{ item.item._circulation.status | translate}}</td>
       <td class="text-right">

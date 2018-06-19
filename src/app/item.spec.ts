@@ -57,7 +57,8 @@ describe('Item', () => {
       location_pid: '1',
       location_name: 'Main Base',
       requests_count: 1,
-      member_pid: '1'
+      member_pid: '1',
+      document_pid: '165'
     };
     patron = {
       name: 'Casalini, Simonetta',

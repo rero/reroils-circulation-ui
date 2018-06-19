@@ -62,6 +62,7 @@ export interface Item {
   $schema?: string;
   pid: string;
   title: string;
+  document_pid: string;
   authors?: string;
   barcode: string;
   location_pid: string;

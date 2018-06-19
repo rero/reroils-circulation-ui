@@ -31,7 +31,9 @@
             <span *ngIf="patron.patron_type">{{ patron.patron_type | translate}}</span>
           </div>
           <div>
-            <span *ngIf="patron.barcode">{{ patron.barcode }}</span>
+            <span *ngIf="patron.barcode">
+              <a [routerLink]="['/checkinout']" [queryParams]="{ patron: patron.barcode }">{{ patron.barcode }}</a>
+            </span>
           </div>
       </div>
     </div>

@@ -45,6 +45,7 @@ export class DocumentsService {
               for (const item of doc.metadata.itemslist) {
                 items.push(this.createItem(item));
                 item.title = doc.metadata.title;
+                item.document_pid = doc.metadata.pid;
               }
             }
             return items;
