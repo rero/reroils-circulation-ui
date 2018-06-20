@@ -30,6 +30,8 @@ import { ManageCheckinCheckoutComponent } from './manage-checkin-checkout/manage
 import { DataTablesModule } from 'angular-datatables';
 import { ModificationGuard } from './modification.guard';
 
+import { TranslateStringService } from './translate.service';
+
 const routes: Routes = [
   {path: '', redirectTo: 'checkinout', pathMatch: 'full'},
   {path: 'checkinout', component: ManageCheckinCheckoutComponent, canDeactivate: [ModificationGuard] },
@@ -71,7 +73,8 @@ const routes: Routes = [
     URLPrefixService,
     PatronsService,
     DocumentsService,
-    ModificationGuard
+    ModificationGuard,
+    TranslateStringService
   ],
   bootstrap: [AppComponent]
 })

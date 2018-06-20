@@ -58,5 +58,6 @@
   "Cancel": "Cancel",
   "more than one patron found": "more than one patron found",
   "renewal": "renewal",
-  "Action": "Action"
+  "Action": "Action",
+  "The item is {{status}}": "The item is {{status}}"
 }

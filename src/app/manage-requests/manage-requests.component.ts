@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { DocumentsService } from '../documents.service';
 import { ItemUI, ItemStatus } from '../item';
-  import { PatronsService } from '../patrons.service';
+import { PatronsService } from '../patrons.service';
+import { TranslateStringService } from '../translate.service';
 
 export function _(str: string) {
   return str;
@@ -18,8 +19,13 @@ export class ManageRequestsComponent {
   public items: ItemUI[];
   private member_pid: string;
   message: string;
+  message_params: {};
 
-  constructor (private documentsService: DocumentsService, private patronsService: PatronsService) {
+  constructor (
+    private documentsService: DocumentsService,
+    private patronsService: PatronsService,
+    private translate: TranslateStringService
+  ) {
     this.items = new Array<ItemUI>();
     this.searchText = '';
     this.placeholder = _('Please enter an item barcode.');
@@ -33,6 +39,7 @@ export class ManageRequestsComponent {
     this.documentsService.getRequestedItems(this.member_pid).subscribe(items => {
       this.items = items;
       this.message = '';
+      this.message_params = {};
     });
   }
 
@@ -42,8 +49,19 @@ export class ManageRequestsComponent {
     if (item === undefined) {
       this.message = _('item not found');
     } else {
-      this.message = '';
       item.doValidateRequest();
+      this.message = _('The item is {{status}}');
+      switch (item.status) {
+        case ItemStatus.at_desk:
+          this.message_params = {'status': this.translate.trans(ItemStatus.at_desk)};
+          break;
+        case ItemStatus.in_transit:
+          this.message_params = {'status': this.translate.trans(ItemStatus.in_transit)};
+          break;
+        default:
+          this.message = '';
+          this.message_params = {};
+      }
       setTimeout(() => { this.searchText = ''; }, 500);
     }
   }

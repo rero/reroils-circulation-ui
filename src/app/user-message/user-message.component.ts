@@ -10,5 +10,5 @@ import { Component, Input } from '@angular/core';
 })
 export class UserMessageComponent {
   @Input() message: string;
-
+  @Input() message_params: {};
 }

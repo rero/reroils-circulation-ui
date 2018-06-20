@@ -1,13 +1,11 @@
-import { Component, Inject, LOCALE_ID } from '@angular/core';
+import { Component } from '@angular/core';
 import { Patron } from '../patron';
 import { PatronsService } from '../patrons.service';
 import { DocumentsService } from '../documents.service';
 import { ItemUI, ItemStatus, ItemType, ItemAction } from '../item';
-import * as moment from 'moment';
 import { Moment } from 'moment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
-import {TranslateService} from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import 'rxjs/add/observable/of';
 export function _(str: string) {
@@ -33,8 +31,6 @@ export class ManageCheckinCheckoutComponent {
   private confirmed: Observable<boolean>;
   constructor(private patronsService: PatronsService,
               private documentsService: DocumentsService,
-              @Inject(LOCALE_ID) locale,
-              translate: TranslateService,
               private route: ActivatedRoute,
               private router: Router) {
     route.queryParamMap.subscribe(params => this.getPatron(params.get('patron')));
@@ -45,9 +41,6 @@ export class ManageCheckinCheckoutComponent {
     this.message = '';
     this.items = new Array<ItemUI>();
     this.requestedItems = new Array<ItemUI>();
-    moment.locale(locale);
-    translate.setDefaultLang('en');
-    translate.use(locale);
     this.confirm_message = undefined;
     this.confirmed = Observable.of(false);
   }
