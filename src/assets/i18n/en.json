@@ -1,7 +1,7 @@
 {
 	"on_shelf": "on shelf",
 	"missing": "missing",
-	"on_loan": "on_loan",
+	"on_loan": "on loan",
 	"in_transit": "in transit",
 	"at_desk": "at desk",
 	"out_of_circulation": "out of circulation",
@@ -18,7 +18,7 @@
 	"no": "no",
 	"standard_loan": "standard loan",
 	"short_loan": "short loan",
-	"no_loan": "on-site consultation",
+	"on_site_consultation": "on-site consultation",
 	"Please enter a patron card number or an item barcode.": "Please enter a patron card number or an item barcode.",
 	"sure to abort pending changes?": "sure to abort pending changes?",
 	"item is already on the list": "item is already on the list",

@@ -18,7 +18,7 @@
 	"no": "aucune",
 	"standard_loan": "prêt standard",
 	"short_loan": "prêt courte durée",
-	"no_loan": "consultation sur place",
+	"on_site_consultation": "Consultation sur place",
 	"Please enter a patron card number or an item barcode.": "Entrer le code-barres de l'exemplaire ou du lecteur",
 	"sure to abort pending changes?": "Quitter sans sauvegarder les changements en cours?",
 	"item is already on the list": "l'exemplaire est déjà dans la liste",
