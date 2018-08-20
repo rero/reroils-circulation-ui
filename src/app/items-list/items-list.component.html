@@ -39,7 +39,7 @@
       <td class="text-right">
         <span [ngClass]="{'text-danger': item.loanExpired}"
               *ngIf="endDate(item)">
-          {{ endDate(item) | date :'medium' }}
+          {{ endDate(item) | date :'longDate' }}
         </span>
       </td>
       <td class="text-right" *ngIf="patron">
