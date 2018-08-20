@@ -67,7 +67,7 @@ export interface Item {
   barcode: string;
   location_pid: string;
   location_name: string;
-  callNumber: string;
+  call_number: string;
   member_pid: string;
   member_name: string;
   item_type: ItemType;

@@ -35,7 +35,7 @@ describe('Item', () => {
     item = {
       id: '165',
       $schema: 'https://ils.test.rero.ch/schema/items/item-v0.0.1.json',
-      callNumber: '00165',
+      call_number: '00165',
       title: 'Carte friulane del Quattrocento dall\'archivio di San Cristoforo di Udine',
       barcode: '10000000165',
       _circulation: {
