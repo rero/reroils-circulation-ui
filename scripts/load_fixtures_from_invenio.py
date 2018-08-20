@@ -12,7 +12,7 @@ def get_items():
         doc = hit.get('metadata')
         items = doc.get('itemslist')
         title = doc.get('title')
-        authors = doc.get('authos')
+        authors = doc.get('authors')
         for item in items:
             if title:
                 item['title'] = title
