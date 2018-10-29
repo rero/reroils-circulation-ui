@@ -57,9 +57,9 @@ export class DocumentsService {
       });
   }
 
-  getRequestedItems(memberPid) {
+  getRequestedItems(libraryPid) {
     return this.http
-      .get<Item[]>(this.urlPrefix.requestedItemsURL + memberPid)
+      .get<Item[]>(this.urlPrefix.requestedItemsURL + libraryPid)
       .map(res => {
         if (res['hits']) {
           const total = res['hits']['total'];
@@ -68,7 +68,7 @@ export class DocumentsService {
             const items = [];
             for (const doc of documents) {
               for (const item of doc.metadata.itemslist) {
-                if (item.member_pid === memberPid && item.requests_count > 0 && item._circulation.status === 'on_shelf') {
+                if (item.library_pid === libraryPid && item.requests_count > 0 && item._circulation.status === 'on_shelf') {
                   items.push(this.createItem(item));
                   item.title = doc.metadata.title;
                 }

@@ -17,7 +17,7 @@ export class ManageRequestsComponent {
   public placeholder: string;
   public searchText: string;
   public items: ItemUI[];
-  private member_pid: string;
+  private library_pid: string;
   message: string;
   message_params: {};
 
@@ -30,13 +30,13 @@ export class ManageRequestsComponent {
     this.searchText = '';
     this.placeholder = _('Please enter an item barcode.');
     patronsService.logged_user.subscribe( user => {
-      this.member_pid = user.member_pid;
+      this.library_pid = user.library_pid;
       this.getRequestedItems();
     });
   }
 
   getRequestedItems() {
-    this.documentsService.getRequestedItems(this.member_pid).subscribe(items => {
+    this.documentsService.getRequestedItems(this.library_pid).subscribe(items => {
       this.items = items;
       this.message = '';
       this.message_params = {};

@@ -1,11 +1,19 @@
 #!/usr/bin/env python
 
-import urllib.request
+from urllib import request
 import json
 import pprint
+import ssl
+
+
+
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
 
 def get_items():
-    response = urllib.request.urlopen('http://localhost:5000/api/documents/?size=1000&q=_exists_:itemslist._circulation.holdings')
+    response = request.urlopen('https://localhost:5000/api/documents/?size=1000&q=_exists_:itemslist._circulation.holdings', context=ctx)
     data = json.loads(response.read().decode('utf-8'))
     to_return = []
     for hit in data.get('hits', {}).get('hits', []):
@@ -22,8 +30,9 @@ def get_items():
             to_return.append(item)
     return to_return
 
+
 def get_patrons():
-    response = urllib.request.urlopen('http://localhost:5000/api/patrons/?size=1000&q=_exists_:barcode')
+    response = request.urlopen('https://localhost:5000/api/patrons/?size=1000&q=_exists_:barcode', context=ctx)
     data = json.loads(response.read().decode('utf-8'))
     to_return = []
     for hit in data.get('hits', {}).get('hits', []):
@@ -32,8 +41,9 @@ def get_patrons():
         to_return.append(patron)
     return to_return
 
+
 def get_logged_user():
-    response = urllib.request.urlopen('http://localhost:5000/api/patrons/?size=1000&q=roles:staff')
+    response = request.urlopen('https://localhost:5000/api/patrons/?size=1000&q=roles:staff', context=ctx)
     data = json.loads(response.read().decode('utf-8'))
     to_return = []
     hit = data.get('hits', {}).get('hits', [])[0]
@@ -41,6 +51,7 @@ def get_logged_user():
     patron['id'] = patron['pid']
     to_return.append(patron)
     return to_return
+
 
 data = {}
 data['logged_user'] = get_logged_user()
