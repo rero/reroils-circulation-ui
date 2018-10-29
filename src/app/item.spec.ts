@@ -44,20 +44,20 @@ describe('Item', () => {
             start_date: '2018-05-19',
             patron_barcode: '2050124311',
             id: '9b378dc3-fb34-4fc3-b8d8-cc0ec8093cb0',
-            pickup_member_pid: '1',
-            pickup_member_name: 'National Documentation Centre',
+            pickup_library_pid: '1',
+            pickup_library_name: 'National Documentation Centre',
             end_date: '2018-07-03'
           }
         ],
         status: ItemStatus.on_shelf
       },
-      member_name: 'National Documentation Centre 3',
+      library_name: 'National Documentation Centre 3',
       pid: '165',
       item_type: ItemType.standard_loan,
       location_pid: '1',
       location_name: 'Main Base',
       requests_count: 1,
-      member_pid: '1',
+      library_pid: '1',
       document_pid: '165'
     };
     patron = {
@@ -97,7 +97,7 @@ describe('Item', () => {
       ],
       email: 'librarian@rero.ch',
       id: '1',
-      member_pid: '1',
+      library_pid: '1',
       is_staff: true,
       is_patron: false,
       city: 'Schaffhausen'
@@ -168,16 +168,16 @@ describe('Item', () => {
   it('request external pickup validate loan and return', () => {
     const itemUI = new ItemUI(item, documentsService, patronsService, loggedUser);
     expect(itemUI.status).toBe(ItemStatus.on_shelf);
-    itemUI.holdings[0].pickup_member_pid = '2';
+    itemUI.holdings[0].pickup_library_pid = '2';
     expect(itemUI.hasRequests).toBe(true);
     itemUI.doValidateRequest();
     expect(itemUI.status).toBe(ItemStatus.in_transit);
-    loggedUser.member_pid = '2';
+    loggedUser.library_pid = '2';
     itemUI.doReceive();
     expect(itemUI.status).toBe(ItemStatus.at_desk);
     itemUI.doLoan(patron);
     expect(itemUI.status).toBe(ItemStatus.on_loan);
-    loggedUser.member_pid = '1';
+    loggedUser.library_pid = '1';
     itemUI.doReturn();
     expect(itemUI.status).toBe(ItemStatus.on_shelf);
   });
@@ -185,18 +185,18 @@ describe('Item', () => {
   it('request external pickup validate loan and return external', () => {
     const itemUI = new ItemUI(item, documentsService, patronsService, loggedUser);
     expect(itemUI.status).toBe(ItemStatus.on_shelf);
-    itemUI.holdings[0].pickup_member_pid = '2';
+    itemUI.holdings[0].pickup_library_pid = '2';
     expect(itemUI.hasRequests).toBe(true);
     itemUI.doValidateRequest();
     expect(itemUI.status).toBe(ItemStatus.in_transit);
-    loggedUser.member_pid = '2';
+    loggedUser.library_pid = '2';
     itemUI.doReceive();
     expect(itemUI.status).toBe(ItemStatus.at_desk);
     itemUI.doLoan(patron);
     expect(itemUI.status).toBe(ItemStatus.on_loan);
     itemUI.doReturn();
     expect(itemUI.status).toBe(ItemStatus.in_transit);
-    loggedUser.member_pid = '1';
+    loggedUser.library_pid = '1';
     itemUI.doReceive();
     expect(itemUI.status).toBe(ItemStatus.on_shelf);
   });
@@ -204,15 +204,15 @@ describe('Item', () => {
   it('request external pickup validate cancel request', () => {
     const itemUI = new ItemUI(item, documentsService, patronsService, loggedUser);
     expect(itemUI.status).toBe(ItemStatus.on_shelf);
-    itemUI.holdings[0].pickup_member_pid = '2';
+    itemUI.holdings[0].pickup_library_pid = '2';
     expect(itemUI.hasRequests).toBe(true);
     itemUI.doValidateRequest();
     expect(itemUI.status).toBe(ItemStatus.in_transit);
     itemUI.holdings.shift();
-    loggedUser.member_pid = '2';
+    loggedUser.library_pid = '2';
     itemUI.doReceive();
     expect(itemUI.status).toBe(ItemStatus.in_transit);
-    loggedUser.member_pid = '1';
+    loggedUser.library_pid = '1';
     itemUI.doReceive();
     expect(itemUI.status).toBe(ItemStatus.on_shelf);
   });

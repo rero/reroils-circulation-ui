@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve --aot --locale fr",
     "build": "ng build --prod",
-    "buildprod": "ng build --aot -prod --deploy-url=/static/js/reroils_data/circulation_ui --output-hashing=none --extract-css=false",
+    "buildprod": "ng build --aot -prod --deploy-url=/static/js/rero_ils/circulation_ui --output-hashing=none --extract-css=false",
     "builden": "npm run buildprod --  --output-path build/en --locale en",
     "postbuilden": "mv build/en/main.bundle.js build/en/main.bundle_en.js",
     "buildfr": "npm run buildprod --  --output-path build/fr --locale fr",
@@ -26,7 +26,7 @@
     "update_catalog": "ngx-translate-extract -i ./src -o ./src/assets/i18n/{it,de,en,fr}.json -m _",
     "buildall": "npm run builden; npm run buildfr; npm run buildde; npm run buildit",
     "deploy": "npm run buildall; cp build/*/main.bundle*.js build/en/*.js",
-    "reroilsdeploy": "npm run deploy -- ../reroils-data/reroils_data/items/static/js/reroils_data/circulation_ui",
+    "reroilsdeploy": "npm run deploy -- ../rero-ils/rero_ils/modules/items/static/js/rero_ils/circulation_ui",
     "clean": "rm -fr build"
   },
   "private": true,

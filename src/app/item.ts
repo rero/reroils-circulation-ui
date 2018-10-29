@@ -47,8 +47,8 @@ export interface Loan {
   end_date: string;
   start_date?: string;
   id: string;
-  pickup_member_name?: string;
-  pickup_member_pid?: string;
+  pickup_library_name?: string;
+  pickup_library_pid?: string;
   renewal_count?: number;
 }
 
@@ -68,8 +68,8 @@ export interface Item {
   location_pid: string;
   location_name: string;
   call_number: string;
-  member_pid: string;
-  member_name: string;
+  library_pid: string;
+  library_name: string;
   item_type: ItemType;
   requests_count: number;
   _circulation: Circulation;
@@ -285,17 +285,17 @@ export class ItemUI {
   }
 
   doReturn() {
-    // return the item on his own member
+    // return the item on his own library
     const request = this.requests[0];
 
     if (!this.hasRequests) {
-      if (this.item.member_pid === this._logged_user.member_pid) {
+      if (this.item.library_pid === this._logged_user.library_pid) {
         this.item._circulation.status = ItemStatus.on_shelf;
       } else {
         this.item._circulation.status = ItemStatus.in_transit;
       }
     } else {
-      if (request.pickup_member_pid === this._logged_user.member_pid) {
+      if (request.pickup_library_pid === this._logged_user.library_pid) {
         this.item._circulation.status = ItemStatus.at_desk;
       } else {
         this.item._circulation.status = ItemStatus.in_transit;
@@ -315,7 +315,7 @@ export class ItemUI {
   doValidateRequest() {
     if (this.hasRequests) {
       const request = this.requests[0];
-      if (request.pickup_member_pid !== this.item.member_pid) {
+      if (request.pickup_library_pid !== this.item.library_pid) {
         this.item._circulation.status = ItemStatus.in_transit;
       } else {
         this.item._circulation.status = ItemStatus.at_desk;
@@ -330,10 +330,10 @@ export class ItemUI {
 
   doReceive() {
     const request = this.requests[0];
-    if (this.hasRequests && (request.pickup_member_pid === this._logged_user.member_pid)) {
+    if (this.hasRequests && (request.pickup_library_pid === this._logged_user.library_pid)) {
         this.item._circulation.status = ItemStatus.at_desk;
     } else {
-      if (!this.hasRequests && (this.item.member_pid === this._logged_user.member_pid)) {
+      if (!this.hasRequests && (this.item.library_pid === this._logged_user.library_pid)) {
         this.item._circulation.status = ItemStatus.on_shelf;
       }
     }

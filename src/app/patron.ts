@@ -30,7 +30,7 @@ export interface Patron {
   postal_code: string;
   city: string;
   phone: string;
-  member_pid?: string;
+  library_pid?: string;
   is_staff?: boolean;
   is_patron?: boolean;
   roles: Array<string>;

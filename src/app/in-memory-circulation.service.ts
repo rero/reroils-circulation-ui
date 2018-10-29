@@ -7,16 +7,16 @@ export class InMemCirculationService implements InMemoryDbService {
 
   get(reqInfo: RequestInfo) {
     if (reqInfo.id === 'requested') {
-      const memberPids = reqInfo.query.get('member_pid');
-      if (memberPids.length) {
-        const memberPid = memberPids.pop();
+      const libraryPids = reqInfo.query.get('library_pid');
+      if (libraryPids.length) {
+        const libraryPid = libraryPids.pop();
         return reqInfo.utils.createResponse$(() => {
           const collection = reqInfo.collection;
           const dataEncapsulation = reqInfo.utils.getConfig().dataEncapsulation;
           const id = reqInfo.id;
           const data = collection.filter(
             item => {
-              return item._circulation.status === 'on_shelf' && item.member_pid === memberPid && item._circulation.holdings.length > 0;
+              return item._circulation.status === 'on_shelf' && item.library_pid === libraryPid && item._circulation.holdings.length > 0;
             }
           );
           // deepcopy

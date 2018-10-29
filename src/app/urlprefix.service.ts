@@ -25,7 +25,7 @@ export class URLPrefixService {
       this.patronsURL = '/api/patrons/?q=barcode:';
       this.documentsURL = '/api/documents/?q=itemslist.barcode:';
       // tslint:disable-next-line
-      this.requestedItemsURL = '/api/documents/?size=100&q=itemslist.requests_count:%5B1%20TO%20*%20%5D%20AND%20item_status:on_shelf%20AND%20itemslist.member_pid:';
+      this.requestedItemsURL = '/api/documents/?size=100&q=itemslist.requests_count:%5B1%20TO%20*%20%5D%20AND%20item_status:on_shelf%20AND%20itemslist.library_pid:';
       this.patronItemsURL = '/api/documents/?&size=100&q=itemslist._circulation.holdings.patron_barcode:';
       this.loggedUserURL = '/patrons/logged_user';
       this.loanItemURL = '/items/loan';
@@ -38,7 +38,7 @@ export class URLPrefixService {
     } else {
       this.patronsURL = '/api/patrons?barcode=';
       this.documentsURL = '/api/items?barcode=';
-      this.requestedItemsURL = '/api/items/requested/?member_pid=';
+      this.requestedItemsURL = '/api/items/requested/?library_pid=';
       this.patronItemsURL = '/api/items?patron_barcode=';
       this.loanItemURL = '/api/items';
       this.returnItemURL = '/api/items';
