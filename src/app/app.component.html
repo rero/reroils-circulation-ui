@@ -1,7 +1,5 @@
 <div class="row" *ngIf="manager && manager.library_pid">
   <div class="col-md-2">
-    <span><i class="fa fa-user"></i> {{manager.name}}</span>
-    <hr>
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/checkinout']">Checkin/Checkout</a>
